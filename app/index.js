@@ -1,0 +1,1 @@
+console.log('hello Webpack 5.9.0')
