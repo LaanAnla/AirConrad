@@ -1,9 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const TerserPlugin = require("terser-webpack-plugin");
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev'
 
@@ -25,6 +26,10 @@ module.exports = {
       dirNode
     ]
   },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+    },
   plugins: [
     new webpack.DefinePlugin({
       IS_DEVELOPMENT
@@ -85,6 +90,6 @@ module.exports = {
         type: "asset/source", // replaced raw-loader
         exclude: /node_modules/,
       },
-    ]
+    ],
   }
 }
