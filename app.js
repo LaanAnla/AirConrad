@@ -8,7 +8,11 @@ app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('pages/home')
+})
+
+app.get('/mentions', (req, res) => {
+  res.render('pages/mentions')
 })
 
 app.listen(port, () => {
