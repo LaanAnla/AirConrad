@@ -58,7 +58,7 @@ module.exports = {
         }
       },
       {
-        test: /.s?css$/,
+        test: /\.s[ac]ss$/i,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -80,10 +80,10 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
         generator: {
-        filename: "fonts/[hash][ext]"
-        }
+          filename: 'fonts/[name].[hash].[ext]',
+        },
       },
       {
         test: /\.(glsl|frag|vert)$/,

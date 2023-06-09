@@ -4,8 +4,17 @@ block variables
   - var template = 'home'
 
 block content 
+  .home
+    .home__wrapper
+      section.home__banner
+        .home__banner__wrapper
+          figure.home__banner__media  
+            img.home__banner__media__image(alt=home.data.image__banner.alt src=home.data.image__banner.url)
+          h1.home__banner__title=home.data.title__banner
 
-  a(href="/mentions") Mentions
-
-
-
+      section.home__shop
+        h1.home__shop__title=home.data.introduction__shop
+        .home__shop__wrapper 
+          each media in home.data.products__shop
+            figure.home__shop__media 
+              img.home__shop__media__image(alt=media.image__shop.alt src=media.image__shop.url)
