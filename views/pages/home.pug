@@ -1,20 +1,59 @@
-extend ../base.pug
+extend ../partials/layout.pug
 
 block variables
   - var template = 'home'
 
 block content 
-  .home
-    .home__wrapper
+  .home#smooth-wrapper
+    .home__wrapper#smooth-content
       section.home__banner
         .home__banner__wrapper
           figure.home__banner__media  
-            img.home__banner__media__image(alt=home.data.image__banner.alt src=home.data.image__banner.url)
-          h1.home__banner__title=home.data.title__banner
-
+            img.home__banner__media__image(alt=home.data.image__banner.alt src='conrad-3d-effet.png')
+          .home__banner__title__wrapper  
+            h1.home__banner__title 30 years on <br/>Conrad is back
+      section.home__gallery
+        img.pixel3(src="pixels.svg" data-speed="2")
+        .home__gallery__left
+          .home__gallery__desktop__content
+            .home__gallery__desktop__content__section
+              h1 Red
+              p Red is a color often associated with strong emotions such as passion, love, and anger. It's a bold and attention-grabbing color that can evoke feelings of excitement, warmth, and energy.
+            .home__gallery__desktop__content__section 
+              h1 Green 
+              p Green is a color that is often associated with nature, growth, and harmony. It is a calming and relaxing color that can evoke feelings of balance, stability, and freshness. 
+            .home__gallery__desktop__content__section 
+              h1 Pink 
+              p Pink is a color that is often associated with femininity, romance, and sweetness. It is a softer and more delicate shade of red that can evoke feelings of warmth, love, and nurturing. 
+        .home__gallery__right 
+          .home__gallery__desktop__photos
+            figure.home__gallery__desktop__photo.red 
+            figure.home__gallery__desktop__photo.green
+            figure.home__gallery__desktop__photo.pink
+      .home__shop__title
+        h1.home__shop__title__introduction(data-speed="clamp(1.3)")=home.data.introduction__shop
       section.home__shop
-        h1.home__shop__title=home.data.introduction__shop
-        .home__shop__wrapper 
+        img.pixel2(src="pixels.svg" data-speed="2")
+        .home__shop__wrapper
           each media in home.data.products__shop
-            figure.home__shop__media 
-              img.home__shop__media__image(alt=media.image__shop.alt src=media.image__shop.url)
+            .module
+              figure.home__shop__media
+                img.home__shop__media__image(alt=media.image__shop.alt src=media.image__shop.url)
+                .home__shop__media__image__texte
+                  h2 Hoodies 59€
+      .home__draw__title 
+        h1(data-speed="1.5") enter the draw
+        img.pixel(src="pixels.svg" data-speed="3")
+      section.home__win__ps5 
+        h1(data-speed="1.2") win a PS5
+      section.home__draw
+        .home__draw__section
+          .home__draw__images 
+            .home__draw__image(data-speed="1.2")
+              figure  
+                img(src="flashback-ps5.png") 
+            .home__draw__image.top(data-speed="1.5")
+          .home__draw__text 
+            h1 Green 
+            p Green is a color that is often associated with nature, growth, and harmony. It is a calming and relaxing color that can evoke feelings of balance, stability, and freshness. 
+      include ../partials/footer.pug

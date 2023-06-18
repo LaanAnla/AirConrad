@@ -8,5 +8,10 @@
 @import './base/base.scss';
 @import './base/fonts.scss';
 
+@import './components/preloader.scss';
+@import './components/navigation.scss';
+@import './components/footer.scss';
+@import './components/cursor.scss';
+
 @import './pages/home/home.scss';
 @import './pages/mentions/mentions.scss';

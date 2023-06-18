@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #451313;
+  height: 20vh;
+  width: 100vw;
+} 
+
+.footer__links {
+
+} 
+
+.footer__mentions p {
+  font-size: clamp(2em, 4vw, 6em);
+  font-family: 'chillax-bold';
+  color: #ffffff;
+  text-transform: uppercase;
+}
+

@@ -1,7 +1,9 @@
 .preloader
-  .preloder__brands
-  p.preloader__text
-    | 30 ans aprés
-    | Conrad est de retour
-
-  .preloader__number 0%
+  .preloader__brands
+    img.preloader__brands__image(src=preloader.data.image.url alt=preloader.data.image.alt)
+    .preloader__number 
+      .preloader__number__text 0%
+  .preloader__video 
+    video.video__preloader(src="" autoplay muted controls)
+    .preloader__video__close 
+      p.skip__video passer l'introduction 

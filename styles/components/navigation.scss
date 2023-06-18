@@ -1,0 +1,40 @@
+.navigation {
+  position: fixed;
+  top: 30px;
+  left: 0;
+
+  height: 15vh;
+  width: 100vw;
+
+  z-index: z('navigation');
+
+  display: flex;
+  align-items: center;
+}
+
+.navigation__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  margin: 0 6rem 0 6rem;
+}
+
+.navigation__link__icon {
+  height: 80px;
+  width: auto;
+}
+
+.navigation__list__link {
+  color: #ffffff;
+  font-family: 'chillax-regular';
+  font-size: 15px;
+  text-decoration: none;
+  border: none;
+}
+
+.has-scrolled .navigation__wrapper {
+  opacity: 0;
+}

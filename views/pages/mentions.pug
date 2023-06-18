@@ -1,8 +1,9 @@
-extend ../base.pug
+extend ../partials/layout.pug
 
 block variables
   - var template = 'mentions'
 
 block content 
-
-  a(href="/") Home
+  .mentions
+    .mentions__wrapper
+    include ../partials/footer.pug
