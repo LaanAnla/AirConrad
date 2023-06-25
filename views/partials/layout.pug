@@ -7,8 +7,10 @@ html(class= isDesktop ? "desktop" : isTablet ? "tablet" : isPhone ? "phone" : ""
     include preloader
     include cursor
     include navigation
+    include pixel
+    include progress
 
     #content.content(data-template=template)
       block content
-
+      //- include canvas
     include scripts

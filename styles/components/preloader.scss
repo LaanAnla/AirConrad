@@ -18,7 +18,8 @@
 
 .preloader__brands {
   position: relative;
-  background-color: #911442;
+  //background-color: #911442;
+  background-color: #000000;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -44,8 +45,8 @@
 
 }
 .preloader__number__text {
-  font-size: 15px;
-  font-family: 'chillax-regular';
+  @extend %p;
+  text-transform: uppercase;
   color: #ffffff;
 }
 
@@ -66,11 +67,11 @@
 
 .preloader__video__close {
   position: absolute;
-  bottom: 30px;
+  top: 30px;
   right: 20px;
-  width: 138px;
+  width: 150px;
   height: 38px;
-  background-color: #cc1152;
+  background-color: #000000;
 
   display: flex;
   justify-content: center;
@@ -78,10 +79,11 @@
 }
 
 .skip__video {
-  font-family: 'chillax-regular';
+  font-family: 'Pixeloid Mono';
   font-size: 12px;
   color: #ffffff;
   pointer-events: none;
+  padding: 5px 5px 5px 5px;
 }
 
 .hidden {

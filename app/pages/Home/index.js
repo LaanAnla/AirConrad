@@ -1,11 +1,14 @@
 import Page from "../../classes/Page";
 import Split from "../../utils/Split";
 import Pining from "../../utils/Pining";
-import NavigationAnim from "../../utils/NavigationAnim";
-import HorizontalScroll from "../../utils/HorizontalScroll";
+// import NavigationAnim from "../../utils/NavigationAnim";
 import Cursor from "../../utils/Cursor";
 import { gsap } from "gsap"
-import { delay } from "lodash";
+import VanillaTilt from 'vanilla-tilt';
+import Scroll from "../../utils/Scroll";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 export default class Home extends Page {
@@ -15,31 +18,14 @@ export default class Home extends Page {
       element : '.home',
       elements : {
         navigation: document.querySelector('.navigation'),
-        button : '.preloader__video__close'
+        button : '.preloader__video__close',
+        images : document.querySelectorAll('.home__gallery__desktop__photos')
       }
     })
-    this.createNavigation()
-    this.createScroll()
-    this.createCursor()
   } 
-
-  createCursor() {
-    this.cursor = new Cursor()
-  }
-
-  createNavigation() {
-   this.animation = new NavigationAnim() 
-  }
-
-  createScroll() {
-    this.scrollHorizontal = new HorizontalScroll()
-  }
-
 
   create() {
     
-    const conrad = document.querySelector('.home__banner__media__image')
-    gsap.set(conrad, { autoAlpha: 0})
     gsap.set(document.querySelector('.home__banner__media'), { autoAlpha: 1})
     const tl = gsap.timeline()
     tl
@@ -48,20 +34,55 @@ export default class Home extends Page {
     }, 3.8)
     this.animation = new Split(
       this.text = document.querySelector('.home__banner__title'),
-      this.item =  conrad
+      this.item =  null
     )
-
-    
-
-    // this.skipVideo = document.querySelector('.preloader')
-    // this.elements.button.addEventListener('click', _ => {
-    //   this.skipVideo.classList.add('hidden')
-    // })
 
     this.pining = new Pining(
       this.start = document.querySelector('.home__gallery'),
       this.pinned = document.querySelector('.home__gallery__right')
     )
+
+    const element = document.querySelectorAll(".js-tilt");
+    element.forEach(el =>{
+      VanillaTilt.init(el);
+      el.addEventListener("tiltChange", {
+        perspective: 2000,
+      });
+    })
+
+    const flashback2 = document.querySelector('.home__shop__title__introduction__wrapper')
+    gsap.set(flashback2, { y: 100 })
+    ScrollTrigger.create({
+      trigger: flashback2,
+      start: 'top center+=20%',
+      end: "top 70%",
+      duration: 0.8,
+      onEnter: ()=> {
+        gsap.to(flashback2, {
+          autoAlpha: 1,
+          y:0
+        })
+      },
+      onLeaveBack: ()=> {
+        gsap.to(flashback2, {
+          autoAlpha: 0
+        })
+      }
+    })
   }
+
+  createCursor() {
+    this.cursor = new Cursor()
+  }
+
+  // createNavigation() {
+  //  this.animation = new NavigationAnim() 
+  // }
+
+  createScroll() {
+    this.scroll = new Scroll()
+  }
+
+
 
 }

@@ -6,13 +6,13 @@ gsap.registerPlugin(ScrollTrigger);
 export default class NavigationAnim {
   constructor() {
 
-    this.moveNavigation()
+    //this.moveNavigation()
   }
 
   createAnimation(direction) {
     const scrollingDown = direction === 1
-    return gsap.to('.navigation__wrapper', {
-      duration: 1,
+    return gsap.to(['.navigation__wrapper', '.home__banner__title'], {
+      duration: 0.3,
       autoAlpha: () => scrollingDown ? 0 : 1,
       y: () => scrollingDown ? 20 : 0
     })
@@ -20,7 +20,7 @@ export default class NavigationAnim {
 
   moveNavigation() {
     ScrollTrigger.create({
-      start: 600,
+      start: 50,
       toggleClass: {
         targets: 'body',
         className: 'has-scrolled',

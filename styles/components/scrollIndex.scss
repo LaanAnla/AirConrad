@@ -1,0 +1,12 @@
+.scroll__index {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: z('navigation');
+}
+
+.scroll__index__text {
+  font-size: clamp(1rem, 1.8vw, 2.5em);
+  font-family: 'Pixeloid Sans';
+  color: #ffffff;
+}

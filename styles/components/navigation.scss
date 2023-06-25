@@ -18,21 +18,25 @@
   justify-content: space-between;
   align-items: center;
 
-  width: 100%;
-  margin: 0 6rem 0 6rem;
+  width: 100vw;
+  //margin: 0 6rem 0 6rem;
+
+  background-color: #0000004f;
 }
 
 .navigation__link__icon {
   height: 80px;
   width: auto;
+  margin: 2rem 6rem 2rem 6rem;
 }
 
 .navigation__list__link {
   color: #ffffff;
-  font-family: 'chillax-regular';
-  font-size: 15px;
+  @extend %p;
+  text-transform: uppercase;
   text-decoration: none;
   border: none;
+  margin: 0 6rem 0 6rem;
 }
 
 .has-scrolled .navigation__wrapper {

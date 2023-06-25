@@ -14,9 +14,7 @@ export default class Pining {
   createPining() {
 
     const details = gsap.utils.toArray('.home__gallery__desktop__content__section:not(:first-child)')
- 
     const photos = gsap.utils.toArray('.home__gallery__desktop__photo:not(:first-child)')
-    // const animation = gsap.to(photos, { yPercent: 0, stagger: 0.5})
     gsap.set(photos,{ yPercent: 100})
 
     ScrollTrigger.create({
@@ -30,13 +28,31 @@ export default class Pining {
 
     details.forEach( (detail, index) => {
       let headline = detail.querySelector('h1')
+      let paragraphe = detail.querySelector('p')
+      gsap.set(paragraphe, { autoAlpha: 0, y: 100})
+      gsap.set(photos[index], {scale: 0.5})
       ScrollTrigger.create({
         trigger:headline,
-        start:"top 80%",
+        start:"top 60%",
         end:"top 50%",
-        animation: gsap.to(photos[index], {yPercent:0}),
+        duration: 2,
+        animation: gsap.to(photos[index], {yPercent:0, scale: 1, ease: "slow(0.7, 0.1, false)"}),
         scrub:true,
-        markers: false
+        markers: false,
+        onEnter: ()=>{
+          gsap.to(paragraphe, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.8
+          })
+        },
+        onLeaveBack: ()=> {
+          gsap.to(paragraphe, {
+            autoAlpha: 0,
+            y: 100,
+            duration: 0.8
+          })
+        }
       })
     });
   }
