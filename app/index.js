@@ -3,7 +3,7 @@ import Home from './pages/Home'
 import Mentions from './pages/Mentions'
 import Experience from './components/Experience/Experience.js'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother.min.js";
+import { ScrollSmoother } from "gsap/ScrollSmoother.js";
 import { gsap } from "gsap"
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
