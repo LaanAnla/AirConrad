@@ -1,5 +1,5 @@
 import Component from "../../classes/Component";
-import gsap from 'gsap'
+import { gsap } from 'gsap'
 
 export default class Preloader extends Component {
   constructor() {
