@@ -14,7 +14,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
-    "gsap": "npm:@gsap/shockingly@^3.12.1",
+    "gsap": "file:gsap-bonus.tgz",
     "include-media": "^2.0.0",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.24",
