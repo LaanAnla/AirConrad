@@ -93,9 +93,9 @@ export default class Preloader extends Component {
       duration: 0.6,
       ease: "Power4.out",
       delay: 2.5,
-      onComplete: () => {
-        this.elements.video.play()
-      }
+      // onComplete: () => {
+      //   this.elements.video.play()
+      // }
     })
   }
 
