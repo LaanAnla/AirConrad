@@ -13,7 +13,9 @@ export default class Preloader extends Component {
         cover: document.querySelector('.preloader__brands')
       }
     })
-    this.createLoader()
+    //this.createLoader()
+    this.onLoaded()
+    this.timeWatch()
     this.skipPreloader()
   }
 
@@ -23,7 +25,7 @@ export default class Preloader extends Component {
     })
 
     var req = new XMLHttpRequest();
-    req.open('GET', '/video-intro-flashback.mp4', true);
+    req.open('GET', 'video-intro-flashback.mp4', true);
     req.responseType = 'blob';
     req.onprogress = (oEvent)=> {
       if (oEvent.lengthComputable) {
@@ -64,12 +66,33 @@ export default class Preloader extends Component {
     req.send();
   }
 
+  timeWatch() {
+    this.elements.video.onloadedmetadata = () => {
+      this.elements.video.ontimeupdate = () => {
+        var timeWatched = this.elements.video.currentTime
+        var duration = this.elements.video.duration
+
+        if (timeWatched >= duration) {
+          gsap.to(this.elements.cover, {
+            autoAlpha: 0,
+            duration: 0.6,
+            ease: "Power4.out",
+            onComplete: () => {
+              this.hide()
+            }
+          })
+        }
+      };
+    };
+  }
+
   onLoaded() {
     // this.emit('completed')
     gsap.to(this.elements.cover, {
       autoAlpha: 0,
       duration: 0.6,
       ease: "Power4.out",
+      delay: 2.5,
       onComplete: () => {
         this.elements.video.play()
       }

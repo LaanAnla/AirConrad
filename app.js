@@ -5,6 +5,20 @@ const app = express()
 const path = require('path')
 const port = 3000
 
+// // Preloading Texture //
+// const handleRequest = async api => {
+//   const preloader = await client.getSingle('preloader')
+
+//   const assets = []
+
+//   assets.push(preloader.data.video1.url)
+
+// return {
+//   preloader
+// }
+
+// }
+
 const prismic = require('@prismicio/client')
 const fetch = require('node-fetch') //version v2
 
