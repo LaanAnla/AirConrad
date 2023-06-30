@@ -37,6 +37,7 @@ export default class Preloader extends Component {
     if (req.status === 200) {
       var videoBlob = req.response;
       var vid = URL.createObjectURL(videoBlob); // IE10+
+      
       this.elements.video.src = vid;
     }
     this.elements.video.onloadedmetadata = () => {
