@@ -55,6 +55,8 @@
   top: 0;
   left: 0;
   z-index: z('navigation');
+  height: 100vh;
+  width: 100vw;
 }
 
 .preloader__video video {
@@ -89,4 +91,14 @@
 
 .hidden {
   visibility: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%
+}
+
+#player {
+  width: 100vw;
+  height: 100vh;
 }
