@@ -25,7 +25,7 @@ export default class Preloader extends Component {
     })
 
     var req = new XMLHttpRequest();
-    req.open('GET', 'video-intro-flashback.mp4', true);
+    req.open('GET', 'video-intro-flashback2.mp4', true);
     req.responseType = 'blob';
     req.onprogress = (oEvent)=> {
       if (oEvent.lengthComputable) {
