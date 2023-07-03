@@ -1,4 +1,5 @@
 import Component from "../../classes/Component";
+import Youtube from "../../utils/Youtube.js";
 import { gsap } from 'gsap'
 
 export default class Preloader extends Component {
@@ -13,10 +14,19 @@ export default class Preloader extends Component {
         cover: document.querySelector('.preloader__brands')
       }
     })
-    this.createLoader()
-    //this.onLoaded()
-    this.timeWatch()
+    this.createVideo()
+    // this.createLoader()
+    // //this.onLoaded()
+    // this.timeWatch()
     this.skipPreloader()
+  }
+
+
+  createVideo() {
+    this.video = new Youtube(this.hidden.bind(this));
+    //this.video = new Youtube()
+    console.log(this.video)
+    this.onLoaded()
   }
 
   createLoader() {
@@ -93,18 +103,22 @@ export default class Preloader extends Component {
       autoAlpha: 0,
       duration: 0.6,
       ease: "Power4.out",
-      delay: 2.5,
-      onComplete: () => {
-        this.elements.video.play()
-      }
+      delay: 3,
+      // onComplete: () => {
+      //   this.elements.video.play()
+      // }
     })
   }
 
   skipPreloader() {
     this.elements.button.addEventListener('click', ()=> {
       this.hide()
-      this.elements.video.pause()
+      //this.elements.video.pause()
     })
+  }
+
+  hidden() {
+    this.hide()
   }
 
   hide() {
