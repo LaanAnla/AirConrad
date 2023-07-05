@@ -81,13 +81,21 @@
   z-index: z('preloader');
 }
 
+.preloader__video__close:hover {
+  background-color: #ffffff;
+}
+
 .skip__video {
   font-family: 'Pixeloid Mono';
   font-size: 12px;
   color: #ffffff;
-  pointer-events: none;
+  pointer-events: auto;
   padding: 5px 5px 5px 5px;
   text-transform: uppercase;
+}
+
+.skip__video:hover {
+  color: rgb(104, 4, 90);
 }
 
 .hidden {

@@ -4,8 +4,10 @@
   align-items: center;
   height: 35vh;
   width: 100vw;
-  background-color: #000000;
+  //background-color: #000000;
   background-image: url('footer.svg');
+  //border: black;
+  position: relative;
 } 
 
 .footer__wrapper {
@@ -63,5 +65,19 @@
   font-family: 'Pixeloid Mono';
   color: #000000;
   text-transform: uppercase;
+}
+
+.back__to__top {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  height: 40px;
+  width: 40px;
+  z-index: z('navigation');
+}
+
+.back__to__top img {
+  height: 100%;
+  width: 100%;
 }
 

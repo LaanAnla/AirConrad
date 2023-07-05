@@ -3,12 +3,10 @@ import Home from './pages/Home'
 import Mentions from './pages/Mentions'
 import Experience from './components/Experience/Experience.js'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-//import { ScrollSmoother } from "gsap/ScrollSmoother.min.js";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { gsap } from "gsap"
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 
 class App {
@@ -26,9 +24,6 @@ class App {
     this.createPrelaoder()
     this.onResize()
     this.update()
-    //this.createContent()
-    //this.createPages()
-    //this.createExperience()
   }
 
   createPrelaoder() {
@@ -56,8 +51,8 @@ class App {
     this.page = this.pages[this.template]
     this.page.create()
     this.page.createCursor()
-    //this.page.createNavigation()
     this.page.createScroll()
+    this.page.createBackToTop()
     this.page.show()
   }
 

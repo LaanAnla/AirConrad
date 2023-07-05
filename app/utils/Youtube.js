@@ -1,8 +1,10 @@
 export default class Youtube {
 
-  constructor(hidden) {
+  constructor(hidden, step1, step2) {
 
   this.hidden = hidden
+  this.step1 = step1
+  this.Step2 = step2
   let that = this
   var tag = document.createElement('script')
   tag.src = "https://www.youtube.com/iframe_api";
@@ -34,30 +36,31 @@ export default class Youtube {
     event.target.seekTo(4);
     event.target.playVideo();
     var duration = player.getDuration();
-    console.log("La durée de la vidéo est de " + duration + " secondes");
   
     var interval = setInterval(() => {
       var currentTime = player.getCurrentTime();
-      console.log("Le temps écoulé est de " + currentTime + " secondes");
   
-      // Si la vidéo est terminée
-      //if (player.getPlayerState() === YT.PlayerState.ENDED) {
       if (duration - currentTime <= 13) {
-        console.log("La vidéo est terminée !");
-        clearInterval(interval); // Arrête de vérifier une fois que la vidéo est terminée
+        this.check = ()=> {
+          clearInterval(interval)
+          console.log('la video est checkee')
+        }
         that.hidden()
       }
-    }, 1000); // Vérifie le temps écoulé toutes les secondes
+    }, 1000)
   }
   
 
   var done = false;
   function onPlayerStateChange(event) {
-    // if (event.data == YT.PlayerState.PLAYING && !done) {
-    //   // player.unMute(); // unmute when start playing
-    //   setTimeout(stopVideo, 6000);
-    //   done = true;
-    // }
+    switch(event.data) {
+      case YT.PlayerState.UNSTARTED:
+        console.log('10%');
+        break;
+      case YT.PlayerState.PLAYING:
+        console.log('50%');
+        break;
+    }
   }
   function stopVideo() {
     player.stopVideo();

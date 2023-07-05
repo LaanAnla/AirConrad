@@ -1,6 +1,7 @@
 import Page from "../../classes/Page";
 import Split from "../../utils/Split";
 import Pining from "../../utils/Pining";
+import Back from "../../utils/Back";
 // import NavigationAnim from "../../utils/NavigationAnim";
 import Cursor from "../../utils/Cursor";
 import { gsap } from "gsap"
@@ -69,6 +70,10 @@ export default class Home extends Page {
         })
       }
     })
+  }
+
+  createBackToTop() {
+    this.back = new Back()
   }
 
   createCursor() {
