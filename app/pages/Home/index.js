@@ -2,7 +2,6 @@ import Page from "../../classes/Page";
 import Split from "../../utils/Split";
 import Pining from "../../utils/Pining";
 import Back from "../../utils/Back";
-// import NavigationAnim from "../../utils/NavigationAnim";
 import Cursor from "../../utils/Cursor";
 import { gsap } from "gsap"
 import VanillaTilt from 'vanilla-tilt';
@@ -28,6 +27,7 @@ export default class Home extends Page {
   create() {
     
     gsap.set(document.querySelector('.home__banner__media'), { autoAlpha: 1})
+    //gsap.set('body', { overflow: 'hidden'})
     const tl = gsap.timeline()
     tl
     .to(document.querySelector('body'), {
@@ -70,7 +70,22 @@ export default class Home extends Page {
         })
       }
     })
+
+    const colors = ["#906030", "#911441",  "#767AB9", "#5C5EA7"]
+    gsap.set(".step__line", {background:gsap.utils.wrap(colors)})
+    
+    const animation = gsap.fromTo('.step__line', { y: -100},{ y: 120, ease: "none", duration: 1, stagger: 0.6})
+
+      ScrollTrigger.create({
+        trigger: '.step__lines',
+        start: "top 300",
+        end: "bottom 100",
+        //markers: true,
+        animation: animation,
+        scrub: 1,
+      })
   }
+
 
   createBackToTop() {
     this.back = new Back()

@@ -37,5 +37,9 @@ export default class Split {
         }
       }, ">-80%")
     })
+    tl.to('.home__banner__scroll__down', {
+      autoAlpha: 1,
+      duration: 1
+    })
   }
 }

@@ -41,10 +41,10 @@ export default class Youtube {
       var currentTime = player.getCurrentTime();
   
       if (duration - currentTime <= 13) {
-        this.check = ()=> {
-          clearInterval(interval)
-          console.log('la video est checkee')
-        }
+        // this.check = ()=> {
+        clearInterval(interval)
+        //   console.log('la video est checkee')
+        // }
         that.hidden()
       }
     }, 1000)

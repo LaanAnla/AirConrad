@@ -10,6 +10,9 @@ block content
         canvas.webgl
         .home__banner__title__wrapper  
           h1.home__banner__title total war has begun... <br/>rise to the challenge!
+          .home__banner__scroll__down
+            p.home__banner__scroll__down__text scroll down 
+            img.home__banner__scroll__down__media(src='arrow-down.svg')
       section.home__gallery
         img.pixel3(src="pixels.svg" data-speed="1.3")
         .home__gallery__left
@@ -22,7 +25,7 @@ block content
               p Since 1985, our mission has been to provide rich and memorable experiences for the whole family.<br><br>In our own studios in France, as well as in collaboration with outstanding partners like Pendulo Studios and Eden Games, we create and distribute video games for PC, consoles and smartphones.
             .home__gallery__desktop__content__section 
               h1 Athletes on the mat 
-              p Pink is a color that is often associated with femininity, romance, and sweetness. It is a softer and more delicate shade of red that can evoke feelings of warmth, love, and nurturing. 
+              p  In 2013, Athletes On The Mat started their activities and became one of the major brands of many BJJ players and underground artists.<br><br>Athletes On The Mat (called ATHOM) grew to embody the BJJ culture and play an integral part in its constant regeneration. BJJ competitors, grapplers, MMA fans, surfers and skaters, all gravitated toward ATHOM.<br><br>While it developed into a BJJ mat, ATHOM established itself as a brand known for its quality, style, and authenticity.
         .home__gallery__right 
           .home__gallery__desktop__photos
             figure.home__gallery__desktop__photo.red 
@@ -74,10 +77,34 @@ block content
         img(src="gamers.svg" data-lag="auto")
       section.home__draw
         .home__draw__section
-          .home__draw__text(data-lag="clamp(1.5)")
+          .home__draw__text
             h2 Follow these steps and try to win a PS5 
-            p 1 - Buy, one or more products (hoodies, tee-shirt, short or rashguards) ✅
-            p 2 - Follow us on instagram ✅
-            p 3 - "Like and comment" our "air conrad" post on instagram  ✅
-            p.center Winner will be drawn at random on 23 November 2023 on instagram
+            .step__one
+              .step__number 
+                p 1
+              .step__lines
+                .step__line
+              .step__text
+                p Buy, one or more products ✅
+            .step__one
+              .step__number 
+                p 2
+              .step__lines
+                .step__line
+              .step__text
+                p Follow us on instagram ✅
+            .step__one
+              .step__number
+                p 3
+              .step__lines 
+                .step__line
+              .step__text
+                p Like and comment our "air conrad" post on instagram  ✅
+            .step__one
+              .step__number   
+                p 4
+              .step__lines
+                .step__line 
+              .step__text
+                p Winner will be drawn at random on 23 November 2023 on instagram
       include ../partials/footer.pug

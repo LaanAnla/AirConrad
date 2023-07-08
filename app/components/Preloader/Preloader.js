@@ -36,7 +36,7 @@ export default class Preloader extends Component {
           this.elements.number.innerHTML = `${Math.round(this.value)}%`
           //this.elements.number.innerHTML = 'GO!'
       } else if(this.value === 100) {
-        this.elements.number.innerHTML = 'GO!'
+        this.elements.number.innerHTML = 'RISE TO THE CHALLENGE'
       } else {
         clearInterval(interval)
       }
@@ -55,7 +55,7 @@ export default class Preloader extends Component {
 
   skipPreloader() {
     this.elements.button.addEventListener('click', ()=> {
-      this.hide()
+      this.hidden()
     })
   }
 
@@ -68,6 +68,7 @@ export default class Preloader extends Component {
       onComplete: ()=> {
         this.destroy()      }
     })
+    //const tl = new gsap.timeline()
     
     tl.to(this.elements.video, {
         autoAlpha: 0,
@@ -82,5 +83,6 @@ export default class Preloader extends Component {
   destroy() {
     this.element.parentNode.removeChild(this.element)
     this.emit('completed')
+    gsap.to('body', { overflow: 'hidden'})
   }
 }
