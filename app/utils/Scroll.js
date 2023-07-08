@@ -1,4 +1,7 @@
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 
 export default class Scroll {
   constructor() {
@@ -6,8 +9,11 @@ export default class Scroll {
     this.bodyTag = document.querySelector('body')
     this.pixels = window.pageYOffset
     this.progressTag = document.querySelector('.progress')
+    // this.sections = document.querySelectorAll('section')
+    // this.clientTag = document.querySelector('.navigation__section__title')
 
     this.scroll()
+    this.sectionsIndex()
   }
 
   scroll() {
@@ -28,5 +34,52 @@ export default class Scroll {
 
       this.progressTag.style.width = `${100 * percentage}%`
     })
+  }
+
+  sectionsIndex() {
+    // document.addEventListener('scroll', ()=> {
+    //   this.pixels = window.pageYOffset
+    const sections = document.querySelectorAll('section')
+    const clientTag = document.querySelector('h2.navigation__section__title')
+
+    //   this.sections.forEach(section => {
+    //     console.log(section)
+    //     if(section.offsetTop >= this.pixels) {
+    //       console.log(section.offsetTop <= this.pixels)
+    //       this.clientTag.innerHTML = section.getAttribute("data-client")
+    //     }
+    //   })
+      
+    // })
+
+
+
+    sections.forEach(section => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        end: "bottom top",
+        //markers: true,
+        onEnter: () => {
+          gsap.to(clientTag, {
+            innerHTML: section.getAttribute('data-client')
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(clientTag, 
+            {
+            scrollTrigger: {
+              trigger: section,
+              start: "bottom center-=200",
+              end: "top top",
+              //markers: true
+            },
+            innerHTML: section.getAttribute('data-client')
+          });
+        }
+      });
+    });
+
+
   }
 }

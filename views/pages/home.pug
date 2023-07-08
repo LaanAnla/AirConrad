@@ -6,14 +6,14 @@ block variables
 block content 
   .home#smooth-wrapper
     .home__wrapper#smooth-content
-      section.home__banner
+      section.home__banner(data-client="WELCOME")
         canvas.webgl
         .home__banner__title__wrapper  
           h1.home__banner__title total war has begun... <br/>rise to the challenge!
           .home__banner__scroll__down
             p.home__banner__scroll__down__text scroll down 
             img.home__banner__scroll__down__media(src='arrow-down.svg')
-      section.home__gallery
+      section.home__gallery(data-client="HISTORY")
         img.pixel3(src="pixels.svg" data-speed="1.3")
         .home__gallery__left
           .home__gallery__desktop__content
@@ -34,12 +34,12 @@ block content
               img.js-tilt(src="microids-scale.jpg")
             figure.home__gallery__desktop__photo.pink 
               img.js-tilt(src="athom-scale.jpg")
-      section.home__shop__title
+      .home__shop__title
         h1.home__shop__title__introduction(data-speed="clamp(1.3)") flashback 2
         .home__shop__title__introduction__wrapper
           p.home__shop__title__introduction(data-speed="clamp(1.3)") In the 22nd century, the peace of the United Worlds extends throughout the Solar System — but this tranquility is threatened by the Morph invasion led by the fearsome General Lazarus.<br><br>In search of his lifelong friend, Ian, and with the help of his few allies — including A.I.S.H.A., his iconic AI-powered weapon — Conrad, once again, dives into a heart-pounding adventure full of twists, turns and revelations!<br><br>A gripping, fluid and intricate platform shooter, including exploration, puzzle solving and, of course, adventure!
         h2.home__shop__title__introduction(data-speed="clamp(0.9)") Discover the collection
-      section.home__shop__photos 
+      section.home__shop__photos(data-client="COLLECTION") 
         .home__shop__photos__wrapper 
           .home__shop__photo(data-speed="clamp(1.1)")
             img(src="flashback-ps5.png")
@@ -49,7 +49,7 @@ block content
             p Rashguard "air conrad"
         //- .home__shop__photos__text   
         //-   p shop them all !
-      section.home__shop__photos 
+      section.home__shop__photos(data-client="COLLECTION")
         img.pixel2(src="pixels.svg" data-speed="2")
         .home__shop__photos__wrapper 
           .home__shop__photo(data-speed="clamp(0.9)")
@@ -60,7 +60,7 @@ block content
             p hoodies "air conrad"
         .home__shop__photos__text   
           p shop them all !
-      section.home__shop
+      section.home__shop(data-client="SHOP")
         .home__shop__wrapper
           each media in home.data.products__shop
             .module
@@ -70,12 +70,12 @@ block content
                   h2 Hoodies 59€
         .home__shop__text
           a(href="https://www.athletesonthemat.com" rel="noreferrer noopener" target="_blank") SHOP ONLINE
-      .home__draw__title
+      section.home__draw__title(data-client="WIN A CONSOLE")
         h1(data-speed="1.1") enter the draw
         img.pixel(src="pixels.svg" data-speed="clamp(3)")
         h1(data-speed="1.3") win a PS5
         img(src="gamers.svg" data-lag="auto")
-      section.home__draw
+      section.home__draw(data-client="WIN A CONSOLE")
         .home__draw__section
           .home__draw__text
             h2 Follow these steps and try to win a PS5 
