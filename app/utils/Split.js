@@ -16,6 +16,8 @@ export default class Split {
   createSplit() {
 
     const split = new SplitText(this.text, {charsClass:'chars', linesClass: 'lines'}) 
+    const splitElement = document.querySelector('.home__banner__title__wrapper ')
+
     const tl = gsap.timeline()
     gsap.set('.home__banner__title__wrapper ', {autoAlpha: 1})
     split.lines.forEach( (line, index)=> {
@@ -30,10 +32,14 @@ export default class Split {
             stagger: 0,
             duration: 0.6
           })
-          .to('.home__banner__title', {
-            duration: 0.8,
-            autoAlpha: 0
-          }, 1)
+          // .to('.home__banner__title', {
+          //   duration: 0.8,
+          //   autoAlpha: 0,
+          // }, 1)
+          // .to('.home__banner__title__ps5', {
+          //   autoAlpha: 1,
+          //   duration: 0.2
+          // })
         }
       }, ">-80%")
     })
@@ -41,5 +47,31 @@ export default class Split {
       autoAlpha: 1,
       duration: 1
     })
+
+    // ScrollTrigger.create({
+    //   trigger: '.home__banner__title',
+    //   start: "center center",
+    //   onEnterBack: ()=>{
+    //     gsap.to('.home__banner__title__ps5', {
+    //       autoAlpha: 1,
+    //       duration: 1,
+    //       //color: 'green'
+    //     })
+    //   }
+    // })
+
+    // splitElement.addEventListener('mouseover', ()=>{
+    //   gsap.to(splitElement, {
+    //     autoAlpha: 0
+    //   })
+    // })
+
+    // splitElement.addEventListener('mouseout', ()=>{
+    //   gsap.to(splitElement, {
+    //     autoAlpha: 1
+    //   })
+    // })
+
+    
   }
 }

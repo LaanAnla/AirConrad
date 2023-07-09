@@ -34,6 +34,20 @@ h1.home__banner__title {
   text-align: center;
 }
 
+h1.home__banner__title__ps5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: clamp(3rem, 70vw, 16rem);
+  width: 75%;
+  font-family: 'Pixeloid Bold';
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  visibility: hidden;
+}
+
 .home__banner__scroll__down {
   visibility: hidden;
 }
@@ -159,10 +173,11 @@ section.home__shop__photos {
 .home__shop__photos__wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 50px;
   height: 100%;
-  width: 80%;
+  width: 100%;
   margin:auto;
 }
 
@@ -223,6 +238,10 @@ section.home__shop {
 //  background-color: red;
 }
 
+.home__galery__left__title {
+  width: 100vw;
+}
+
 .home__shop__title__introduction__wrapper {
   width: 60vw;
   display: flex;
@@ -234,12 +253,14 @@ section.home__shop {
 h1.home__shop__title__introduction {
   color: #ffffff;
   @extend %h1;
+  margin-bottom: 30px;
 }
 
 h2.home__shop__title__introduction {
   color: #ffffff;
   @extend %h2;
   padding: 50px 0 50px 0;
+  text-align: center;
 }
 
 p.home__shop__title__introduction {
@@ -264,7 +285,7 @@ figure.home__shop__media {
 	overflow:hidden;
   
 	width:350px;
-	height:450px;
+	height:350px;
 
   background-color: rgb(156, 20, 106);
 } 
@@ -285,7 +306,7 @@ img.home__shop__media__image {
   text-transform: uppercase;
   color: #ffffff;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.507);
+  background-color: rgb(0, 0, 0);
 }
 
 .module {
@@ -347,7 +368,7 @@ img.home__shop__media__image {
 }
 
 .home__draw__title img {
-  width: 40vw;
+  width: 30vw;
   height: auto;
   padding-top: 50px;
 }
@@ -407,6 +428,7 @@ img.home__shop__media__image {
   @extend %h2;
   color: #ffffff;
   padding-bottom: 15px;
+  text-align: center;
 }
 
 .home__draw__text p {
@@ -456,9 +478,9 @@ img.home__shop__media__image {
 
 .step__lines {
   width:20px;
-	height:100px;
+	height:70px;
 	overflow:hidden;
-	background:#222;
+	background:#222222;
   margin-left: 30px;
   margin-right: 30px;
 }

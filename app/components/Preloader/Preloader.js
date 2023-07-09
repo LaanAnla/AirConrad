@@ -21,6 +21,9 @@ export default class Preloader extends Component {
 
 
   createVideo() {
+    gsap.to(document.querySelector('body'), {
+      overflow: 'hidden'
+    })
     this.video = new Youtube(this.hidden.bind(this));
     setTimeout(() => {
       this.incrementValue() 
@@ -46,8 +49,9 @@ export default class Preloader extends Component {
   onLoaded() {
     // this.emit('completed')
     gsap.to(this.elements.cover, {
-      autoAlpha: 0,
-      duration: 0.6,
+      //autoAlpha: 0,
+      scale:0,
+      duration: 0.4,
       ease: "Power4.out",
       delay: 3,
     })

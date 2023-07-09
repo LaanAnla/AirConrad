@@ -3,7 +3,8 @@
   top: 0;
   left: 0;
   width: 0;
-  height: 4px;
-  background-color: #911441;
+  height: 6px;
+  //background-color: #911441;
+  border-top: 6px dotted #911441;
   z-index: z('navigation');
 }

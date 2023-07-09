@@ -9,8 +9,6 @@ export default class Scroll {
     this.bodyTag = document.querySelector('body')
     this.pixels = window.pageYOffset
     this.progressTag = document.querySelector('.progress')
-    // this.sections = document.querySelectorAll('section')
-    // this.clientTag = document.querySelector('.navigation__section__title')
 
     this.scroll()
     this.sectionsIndex()
@@ -37,22 +35,9 @@ export default class Scroll {
   }
 
   sectionsIndex() {
-    // document.addEventListener('scroll', ()=> {
-    //   this.pixels = window.pageYOffset
+
     const sections = document.querySelectorAll('section')
     const clientTag = document.querySelector('h2.navigation__section__title')
-
-    //   this.sections.forEach(section => {
-    //     console.log(section)
-    //     if(section.offsetTop >= this.pixels) {
-    //       console.log(section.offsetTop <= this.pixels)
-    //       this.clientTag.innerHTML = section.getAttribute("data-client")
-    //     }
-    //   })
-      
-    // })
-
-
 
     sections.forEach(section => {
       ScrollTrigger.create({
