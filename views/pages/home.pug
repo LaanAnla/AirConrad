@@ -9,8 +9,12 @@ block content
       section.home__banner(data-client="WELCOME")
         canvas.webgl
         .home__banner__title__wrapper  
-          //- h1.home__banner__title total war has begun... <br/>rise to the challenge!
-          h1.home__banner__title Discover our collection and<br/>Win a PS5
+          //- h1.home__banner__title Discover our collection and<br/>Win a PS5
+          h1.home__banner__title 
+            | Discover our collection and
+            br
+            a.green-text-link#win-console
+              span.green-text Win a PS5
           .home__banner__scroll__down
             p.home__banner__scroll__down__text scroll down 
             img.home__banner__scroll__down__media(src='arrow-down.svg')
@@ -18,26 +22,30 @@ block content
         h2.home__shop__title__introduction(data-speed="clamp(0.9)") Discover the collection
         .home__shop__photos__wrapper 
           .home__shop__photo(data-speed="clamp(1.1)")
-            img(src="hoodies-air-conrad.jpg")
-            p Grappling Short "air conrad"
-            p price : 59€
+            a(href="#")
+              img(src="hoodies-air-conrad.jpg")
+            p.photo Grappling Short "air conrad"
+            p.price price : 59€
           .home__shop__photo(data-speed="clamp(1)")
-            img(src="hoodies-air-conrad.jpg")
-            p Rashguard "air conrad"
-            p price : 59€
+            a(href="#")
+              img(src="hoodies-air-conrad.jpg")
+            p.photo Rashguard "air conrad"
+            p.price price : 59€
         //- .home__shop__photos__text   
         //-   p shop them all !
       section.home__shop__photos(data-client="COLLECTION")
         img.pixel2(src="pixels.svg" data-speed="2")
         .home__shop__photos__wrapper 
           .home__shop__photo(data-speed="clamp(0.9)")
-            img(src="hoodies-air-conrad.jpg")
-            p tee-shirt "air conrad"
-            p price : 59€
+            a(href="#")
+              img(src="hoodies-air-conrad.jpg")
+            p.photo tee-shirt "air conrad"
+            p.price price : 59€
           .home__shop__photo(data-speed="clamp(1.1)")
-            img(src="hoodies-air-conrad.jpg")
-            p hoodies "air conrad"
-            p price : 59€
+            a(href="#")
+              img(src="hoodies-air-conrad.jpg")
+            p.photo hoodies "air conrad"
+            p.price price : 59€
         //- .home__shop__photos__text   
         //-   p shop them all !
       //- section.home__shop(data-client="SHOP")
@@ -50,7 +58,7 @@ block content
       //-             h2 Hoodies 59€
       //-   .home__shop__text
       //-     a(href="https://www.athletesonthemat.com" rel="noreferrer noopener" target="_blank") SHOP ONLINE
-      section.home__draw__title(data-client="WIN A CONSOLE")
+      section.home__draw__title(id="console" data-client="WIN A CONSOLE")
         h1(data-speed="1.1") enter the draw
         img.pixel(src="pixels.svg" data-speed="clamp(3)")
         h1(data-speed="1") win a PS5
@@ -72,9 +80,13 @@ block content
               .step__lines
                 .step__line
               .step__text
-                p Follow 
-                a(href="https://www.athletesonthemat.com/"  rel="noreferrer noopener" target="_blank")
-                  p athletesonthemat on instagram ✅
+                p
+                  | Follow
+                  | &nbsp;
+                  a.step__text__link(href="https://www.instagram.com/athletesonthemat/" rel="noreferrer noopener" target="_blank")
+                    | athletesonthemat 
+                  | &nbsp;
+                  | on Instagram ✅
             .step__one
               .step__number
                 p 3

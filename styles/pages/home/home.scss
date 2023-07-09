@@ -202,12 +202,20 @@ section.home__shop__photos {
   //overflow: hidden;
 }
 
-.home__shop__photo p {
+.photo {
   font-size: clamp(1.4em, 2vw, 3em);
   font-family: 'Pixeloid Sans';
   color: #ffffff;
   text-transform: uppercase;
   padding-top: 10px;
+}
+
+.price {
+  font-size: clamp(1.4em, 2vw, 3em);
+  font-family: 'Pixeloid Sans';
+  text-transform: uppercase;
+  padding-top: 10px;
+  color:green;
 }
 
 .home__shop__photo img {
@@ -506,9 +514,30 @@ img.home__shop__media__image {
   align-items: center;
 }
 
+.step__text__link {
+  color:rgb(156, 20, 106);
+  text-decoration: none;
+}
+
+.step__text__link:hover {
+  color: green;
+}
+
 .step__text p,
 .step__number p {
   @extend %p;
   color: #ffffff;
   padding-bottom: 0px;
+}
+
+.green-text {
+  color: green;
+}
+
+.green-text:hover {
+  color:rgb(156, 20, 106)
+}
+
+.green-text-link {
+  text-decoration: none;
 }

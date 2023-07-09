@@ -83,7 +83,7 @@ export default class Home extends Page {
         //markers: true,
         animation: animation,
         scrub: 1,
-      })
+      }) 
   }
 
 

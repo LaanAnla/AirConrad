@@ -12,18 +12,37 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 class App {
   constructor() {
 
-    ScrollSmoother.create({
+    this.smoother = ScrollSmoother.create({
       smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
       effects: true,           // looks for data-speed and data-lag attributes on elements
       smoothTouch: 0.1,        // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
       smooth: 1.8,
-      effects: true
+      effects: true,
+
     })
 
     this.canvas = document.querySelector('canvas.webgl')
     this.createPrelaoder()
     this.onResize()
     this.update()
+    this.createJump()
+  }
+
+  createJump() {
+    document.querySelector("a#win-console").addEventListener("click", e => {
+      // scroll to the spot where .box-c is in the center.
+      // parameters: element, smooth, position
+      this.smoother.scrollTo(
+        "#console", 
+        true, 
+        "center center-=50px");
+      
+      // or you could animate the scrollTop:
+      // gsap.to(smoother, {
+      //  scrollTop: smoother.offset(".box-c", "center center"),
+      //  duration: 1
+      // });
+    });
   }
 
   createPrelaoder() {
