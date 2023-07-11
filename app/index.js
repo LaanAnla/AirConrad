@@ -21,7 +21,7 @@ class App {
 
     })
 
-    this.canvas = document.querySelector('canvas.webgl')
+    this.canvas = document.querySelector('canvas#webgl')
     this.createPrelaoder()
     this.onResize()
     this.update()
@@ -29,19 +29,11 @@ class App {
   }
 
   createJump() {
-    document.querySelector("a#win-console").addEventListener("click", e => {
-      // scroll to the spot where .box-c is in the center.
-      // parameters: element, smooth, position
+    document.querySelector("a#win-console").addEventListener("click", () => {
       this.smoother.scrollTo(
         "#console", 
         true, 
         "center center-=50px");
-      
-      // or you could animate the scrollTop:
-      // gsap.to(smoother, {
-      //  scrollTop: smoother.offset(".box-c", "center center"),
-      //  duration: 1
-      // });
     });
   }
 
@@ -79,6 +71,7 @@ class App {
     this.experience = new Experience(this.canvas, this.template)
   }
 
+
   onResize() {
     if(this.page && this.page.onResize) {
       this.page.onResize()
@@ -93,6 +86,7 @@ class App {
     if(this.experience && this.experience.update) {
       this.experience.update()
     }
+
     if(this.page && this.page.update) {
       this.page.update()
     }

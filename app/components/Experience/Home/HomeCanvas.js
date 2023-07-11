@@ -18,10 +18,11 @@ export default class HomeCanvas {
     this.camera = this.experience.camera
     this.time = this.experience.time
 
-    var frustumSize = 1;
-    var aspect = this.sizes.width / this.sizes.height;
-    this.camera.instance = new THREE.OrthographicCamera(frustumSize / -2, frustumSize / 2, frustumSize / 2, frustumSize / -2, -1000, 1000);
-    this.camera.instance.position.set(0, 0, 2);
+
+    // var frustumSize = 1;
+    // var aspect = this.sizes.width / this.sizes.height;
+    // this.camera.instance = new THREE.OrthographicCamera(frustumSize / -2, frustumSize / 2, frustumSize / 2, frustumSize / -2, -1000, 1000);
+    // this.camera.instance.position.set(0, 0, 2);
 
     this.mouse = {
       x: 0,
@@ -99,7 +100,6 @@ export default class HomeCanvas {
     });
 
     this.geometry = new THREE.PlaneGeometry(1, 1, 1, 1);
-
     this.mesh = new THREE.Mesh(this.geometry, this.material);
     this.scene.add(this.mesh);
 
@@ -108,8 +108,8 @@ export default class HomeCanvas {
   updateDataTexture() {
     let data = this.texture.image.data
     for(let i = 0; i < data.length; i+= 4) {
-      data[i] *= 0.97
-      data[i+1] *= 0.97
+      data[i] *= 0.99
+      data[i+1] *= 0.99
     }
 
     let gridMouseX = this.size*this.mouse.x

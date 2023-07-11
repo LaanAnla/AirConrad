@@ -7,8 +7,8 @@ block content
   .home#smooth-wrapper
     .home__wrapper#smooth-content
       section.home__banner(data-client="WELCOME")
-        canvas.webgl
-        .home__banner__title__wrapper  
+        .home__banner__title__wrapper
+          canvas#webgl  
           //- h1.home__banner__title Discover our collection and<br/>Win a PS5
           h1.home__banner__title 
             | Discover our collection and
@@ -62,7 +62,9 @@ block content
         h1(data-speed="1.1") enter the draw
         img.pixel(src="pixels.svg" data-speed="clamp(3)")
         h1(data-speed="1") win a PS5
-        img(src="gamers.svg" data-lag="auto")
+        canvas#webglPS5
+        //- #webglPS5
+        //- img(src="gamers.svg" data-lag="auto")
       section.home__draw(data-client="WIN A CONSOLE")
         .home__draw__section
           .home__draw__text
