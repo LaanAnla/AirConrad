@@ -51,8 +51,9 @@ export default class Experience {
   }
 
   update() {
-    this.homeCanvas.update()
+    this.camera.update()
     this.renderer.update()
+    this.homeCanvas.update()
     this.homeCanvasPS5.update()
   }
 }

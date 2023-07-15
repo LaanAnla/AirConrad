@@ -59,7 +59,8 @@ export default class Preloader extends Component {
 
   skipPreloader() {
     this.elements.button.addEventListener('click', ()=> {
-      this.hidden()
+      this.hide()
+      //this.hidden()
     })
   }
 
@@ -76,11 +77,11 @@ export default class Preloader extends Component {
     
     tl.to(this.elements.video, {
         autoAlpha: 0,
-        duration: 0.5
+        duration: 0.2
       })
       tl.to(this.elements.button, {
         autoAlpha: 0,
-        duration: 0.5
+        duration: 0.2
       },0)
   }
 

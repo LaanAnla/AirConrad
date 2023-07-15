@@ -5,6 +5,7 @@ export default class Renderer {
   constructor() {
 
     this.experience = new Experience()
+    console.log(this.experience)
 
     this.canvas = this.experience.canvas
     this.sizes = this.experience.sizes
@@ -13,8 +14,8 @@ export default class Renderer {
     this.camera = this.experience.camera
     this.div = document.querySelector('#webgl')
     this.div2 = document.querySelector('#webglPS5')
-    this.sizesDiv = this.div.getBoundingClientRect()
-    this.sizesDiv2 = this.div.getBoundingClientRect()
+    //this.sizesDiv = this.div.getBoundingClientRect()
+    //this.sizesDiv2 = this.div.getBoundingClientRect()
 
     this.setInstance()
     this.setInstance2()
@@ -41,27 +42,29 @@ export default class Renderer {
   }
 
   setInstance2() {
-
+    
     this.instance2 = new THREE.WebGLRenderer({
       canvas: this.div2,
       antialias: true,
       alpha: true,
       autoClear : true
     })
-
+    console.log(this.instance2.domElement)
+    
     //this.instance.setSize(this.sizes.width, this.sizes.height );
-    this.instance2.setSize(this.sizesDiv2.width, this.sizesDiv2.height)
+    this.instance2.setSize(this.sizes.width, this.sizes.height)
     this.instance2.toneMapping = THREE.CineonToneMapping
     this.instance2.toneMappingExposure = 1.75
     this.instance2.shadowMap.enabled = true
     this.instance2.shadowMap.type = THREE.PCFSoftShadowMap
     this.instance2.setPixelRatio(Math.min(this.sizes.pixelRatio, 2))
+    this.instance2.outputColorSpace = THREE.LinearSRGBColorSpace
   }
 
   resize() {
     this.instance.setSize(this.sizes.width, this.sizes.height )
     //this.instance.setSize(this.sizesDiv.width, this.sizesDiv.height)
-    this.instance2.setSize(this.sizesDiv2.width, this.sizesDiv2.height)
+    this.instance2.setSize(this.sizes.width, this.sizes.height)
     this.instance.setPixelRatio(this.sizes.pixelRatio)
     this.instance2.setPixelRatio(this.sizes.pixelRatio)
   }

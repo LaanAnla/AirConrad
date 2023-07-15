@@ -9,8 +9,7 @@ export default class Camera {
     this.scene = this.experience.scene
     this.scene2 = this.experience.scene2
     this.canvas = this.experience.canvas
-    this.renderer = this.experience.renderer
-
+  
     this.setInstance()
     this.setInstance2()
   }
@@ -24,10 +23,14 @@ export default class Camera {
   }
 
   setInstance2() {
-    this.instance2 = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 0.01, 10 );
-    this.instance2.position.z = 1
-
+    this.instance2 = new THREE.PerspectiveCamera( 15, window.innerWidth / window.innerHeight, 0.01, 100 );
+    this.instance2.position.z = 3
+    //this.instance2.position.set( 1, 1, 3 )
     this.scene2.add(this.instance2)
+  }
+
+  update() {
+    
   }
 
   resize() {

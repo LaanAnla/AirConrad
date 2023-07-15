@@ -1,5 +1,8 @@
 import * as THREE from 'three'
 import Experience from '../Experience'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
 
 export default class HomeCanvasPS5 {
   constructor() {
@@ -10,33 +13,95 @@ export default class HomeCanvasPS5 {
     this.scene = this.experience.scene2
     this.camera = this.experience.camera.instance2
     this.time = this.experience.time
-    
-    // this.camera = new THREE.PerspectiveCamera( 70, this.sizes.width / this.sizes.height, 0.01, 10 );
-    // this.camera.position.z = 1
-
-
+    this.gltfLoader = new GLTFLoader()
+      
     this.addObjects()
+    this.makeStars()
+    this.setControls()
     
   }
 
   addObjects() {
-    console.log('hello from PS5')
-    this.geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
-    this.material = new THREE.MeshNormalMaterial();
+    this.gltfLoader.load(
+      'scene.gltf', (gltf) =>
+      {
+          const box = new THREE.Box3().setFromObject( gltf.scene );
+          const center = box.getCenter( new THREE.Vector3() );
+          gltf.scene.children[0].position.x += ( gltf.scene.children[0].position.x - center.x );
+          gltf.scene.children[0].position.y += ( gltf.scene.children[0].position.y - center.y );
+          gltf.scene.children[0].position.z += ( gltf.scene.children[0].position.z - center.z );
+          this.scene.add(gltf.scene.children[0])
+          console.log('success')
+          console.log(gltf)
+      },
+      (progress) =>
+      {
+          console.log('progress')
+          console.log(progress)
+      },
+      (error) =>
+      {
+          console.log('error')
+          console.log(error)
+      }
+    )
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8)
+    this.scene.add(ambientLight)   
+  }
 
-    this.mesh = new THREE.Mesh( this.geometry, this.material );
-    this.scene.add( this.mesh );    
+  makeStars() {
+    THREE.ColorManagement.enabled = false
+    const particlesGeometry = new THREE.BufferGeometry()
+    const count = 2000
+    const position = new Float32Array(count * 3)
+    const colors = new Float32Array(count * 3)
+
+    for (let i=0; i < count * 3; i++) {
+      position[i] = 3 * (Math.random() - 0.5)
+      colors[i] = Math.random()
+    }
+
+    particlesGeometry.setAttribute(
+      'position',
+      new THREE.BufferAttribute(position, 3)
+    )
+    particlesGeometry.setAttribute(
+      'color', 
+      new THREE.BufferAttribute(colors, 3))
+
+
+    const particlesMaterial = new THREE.PointsMaterial({
+      size: 0.02,
+      sizeAttenuation: true,
+      //color: 'red',
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      vertexColors: true
+    })
+    const particles = new THREE.Points(particlesGeometry, particlesMaterial)
+    this.scene.add(particles)
+
+  }
+
+  setControls() {
+    this.controls = new OrbitControls( this.camera, this.renderer.domElement );
+    this.controls.enableDamping = false
+    this.controls.enableZoom = false
+    this.controls.autoRotate = true
+    this.controls.autoRotateSpeed = 0.9
+    this.controls.dampingFactor = 0.05;
+    //this.controls.maxPolarAngle = Math.PI / 2
   }
 
   resize() {
-    //this.renderer = new THREE.WebGLRenderer( { antialias: true } );
+    this.camera.aspect = this.sizes.width / this.sizes.height
     this.renderer.setSize( this.sizes.width, this.sizes.height );
     this.renderer.render( this.scene, this.camera );
+    this.camera.updateProjectionMatrix()
   }
 
   update() {
-    this.mesh.rotation.x = this.time.elapsed / 2000
-    this.mesh.rotation.y = this.time.elapsed / 2000  
+    this.controls.update()
   }
 
 
