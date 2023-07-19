@@ -9,5 +9,9 @@
   mix-blend-mode: difference;
   border-radius: 50%;
   pointer-events: none;
-  z-index: z('cursor')
+  z-index: z('cursor');
+
+  @include media('<smaller') {
+    display: none;
+  }
 }

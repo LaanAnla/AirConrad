@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import Experience from '../Experience'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { gsap } from 'gsap'
 
 
 export default class HomeCanvasPS5 {
@@ -52,7 +53,7 @@ export default class HomeCanvasPS5 {
   makeStars() {
     THREE.ColorManagement.enabled = false
     const particlesGeometry = new THREE.BufferGeometry()
-    const count = 2000
+    const count = 1000
     const position = new Float32Array(count * 3)
     const colors = new Float32Array(count * 3)
 
@@ -69,15 +70,15 @@ export default class HomeCanvasPS5 {
       'color', 
       new THREE.BufferAttribute(colors, 3))
 
+      const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.02,
+        sizeAttenuation: true,
+        //color: 'red',
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+        vertexColors: true
+      })
 
-    const particlesMaterial = new THREE.PointsMaterial({
-      size: 0.02,
-      sizeAttenuation: true,
-      //color: 'red',
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      vertexColors: true
-    })
     const particles = new THREE.Points(particlesGeometry, particlesMaterial)
     this.scene.add(particles)
 
@@ -88,7 +89,7 @@ export default class HomeCanvasPS5 {
     this.controls.enableDamping = false
     this.controls.enableZoom = false
     this.controls.autoRotate = true
-    this.controls.autoRotateSpeed = 0.9
+    this.controls.autoRotateSpeed = 0.7
     this.controls.dampingFactor = 0.05;
     //this.controls.maxPolarAngle = Math.PI / 2
   }

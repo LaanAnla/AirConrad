@@ -48,6 +48,10 @@
   @extend %p;
   text-transform: uppercase;
   color: #ffffff;
+
+  @include media('<phone') {
+    font-size: 15px;
+  }
 }
 
 .preloader__video {

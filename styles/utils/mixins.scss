@@ -33,11 +33,12 @@
 
 %h2 {
   font-family: 'Pixeloid Mono';
-  font-size: clamp(1.6rem, 2.5vw, 4em);
+  //font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: clamp(1.875rem, 1rem + 4.375vw, 6.25rem);
 }
 
 %p {
-  font-size: clamp(1.4em, 2vw, 3em);
+  font-size: clamp(2vw, 2vw, 3rem);
   font-family: 'Pixeloid Sans';
 }
 

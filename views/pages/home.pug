@@ -8,8 +8,7 @@ block content
     .home__wrapper#smooth-content
       section.home__banner(data-client="WELCOME")
         .home__banner__title__wrapper
-          canvas#webgl  
-          //- h1.home__banner__title Discover our collection and<br/>Win a PS5
+          canvas#webgl 
           h1.home__banner__title 
             | Discover our collection and
             br
@@ -18,59 +17,54 @@ block content
           .home__banner__scroll__down
             p.home__banner__scroll__down__text scroll down 
             img.home__banner__scroll__down__media(src='arrow-down.svg')
-      section.home__shop__photos(data-client="COLLECTION") 
-        h2.home__shop__title__introduction(data-speed="clamp(0.9)") Discover the collection
-        .home__shop__photos__wrapper 
-          .home__shop__photo(data-speed="clamp(1.1)")
-            a(href="#")
-              img(src="hoodies-air-conrad.jpg")
-            p.photo Grappling Short "air conrad"
-            p.price price : 59€
-          .home__shop__photo(data-speed="clamp(1)")
-            a(href="#")
-              img(src="hoodies-air-conrad.jpg")
-            p.photo Rashguard "air conrad"
-            p.price price : 59€
-        //- .home__shop__photos__text   
-        //-   p shop them all !
-      section.home__shop__photos(data-client="COLLECTION")
-        img.pixel2(src="pixels.svg" data-speed="2")
-        .home__shop__photos__wrapper 
-          .home__shop__photo(data-speed="clamp(0.9)")
-            a(href="#")
-              img(src="hoodies-air-conrad.jpg")
-            p.photo tee-shirt "air conrad"
-            p.price price : 59€
-          .home__shop__photo(data-speed="clamp(1.1)")
-            a(href="#")
-              img(src="hoodies-air-conrad.jpg")
-            p.photo hoodies "air conrad"
-            p.price price : 59€
-        //- .home__shop__photos__text   
-        //-   p shop them all !
-      //- section.home__shop(data-client="SHOP")
-      //-   .home__shop__wrapper
-      //-     each media in home.data.products__shop
-      //-       .module
-      //-         figure.home__shop__media
-      //-           img.home__shop__media__image(alt=media.image__shop.alt src="hoodies-air-conrad.jpg")
-      //-           .home__shop__media__image__texte
-      //-             h2 Hoodies 59€
-      //-   .home__shop__text
-      //-     a(href="https://www.athletesonthemat.com" rel="noreferrer noopener" target="_blank") SHOP ONLINE
-      section.home__draw__title(id="console" data-client="WIN A CONSOLE")
-        h1(data-speed="1.1") enter the draw
-        img.pixel(src="pixels.svg" data-speed="clamp(3)")
-        h1(data-speed="1") win a PS5
+
+
+      section.home__collection(data-client="COLLECTION") 
+        img.pixel1(src="pixels.svg" data-speed="2")
+        .home__collection__title__introduction__wrapper
+          h2.home__collection__title__introduction(data-speed="clamp(1.1)") Discover the collection
+        .home__collection__product__wrapper
+          figure.home__collection__product(data-speed="clamp(0.9)")
+            .home__collection__product__photo
+              a(href="#")
+                img(src="hoodies-air-conrad.jpg")
+              p.photo Grappling Short "air conrad"
+              p.price price : 59€
+          figure.home__collection__product(data-speed="clamp(1.1)")
+            .home__collection__product__photo
+              a(href="#")
+                img(src="hoodies-air-conrad.jpg")
+              p.photo Rashguard "air conrad"
+              p.price price : 59€
+
+        .home__collection__product__wrapper
+          figure.home__collection__product(data-speed="clamp(1.1)")
+            .home__collection__product__photo
+              a(href="#")
+                img(src="hoodies-air-conrad.jpg")
+              p.photo Tee-shirt "air conrad"
+              p.price price : 59€
+          figure.home__collection__product(data-speed="clamp(0.9)")
+            .home__collection__product__photo
+              a(href="#")
+                img(src="hoodies-air-conrad.jpg")
+              p.photo Hoddies "air conrad"
+              p.price price : 59€
+
+      section.home__ps5(id="console" data-client="WIN A CONSOLE")
+        img.pixel1(src="pixels.svg" data-speed="2")
+        .home__ps5__title__introduction__wrapper
+          h2.home__ps5__title__introduction(data-speed="1") enter the draw
+          h2.home__ps5__title__introduction(data-speed="1.3") win a PS5
         canvas#webglPS5
-        //- #webglPS5
-        //- img(src="gamers.svg" data-lag="auto")
         p.credit "PS5 Box - Accurate scale" (https://skfb.ly/orKZ7) by trainhard is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-      section.home__draw(data-client="WIN A CONSOLE")
-        .home__draw__section
-          .home__draw__text
-            h2 Follow these steps and try to win a PS5 
-            .step__one
+
+      section.home__ps5__rules(data-client="WIN A CONSOLE")
+        .home__ps5__rules__title__wrapper
+          .home__ps5__rules__title
+            .home__ps5__rules__h2__wrapper
+              h2 Follow these steps and try to win a PS5 
+            .step__one 
               .step__number 
                 p 1
               .step__lines
@@ -104,31 +98,8 @@ block content
                 .step__line 
               .step__text
                 p Winner will be drawn at random on 23 November 2023 on instagram ✅
-      section.home__gallery(data-client="GENESIS")
-        .home__gallery__left
-          .home__galery__left__title
-            h2.home__shop__title__introduction(data-speed="clamp(0.9)") History of Flashback
-          .home__gallery__desktop__content
-            .home__gallery__desktop__content__section
-              h1 Flashback
-              p In 1992, Flashback revolutionized action gaming and gained legendary status, ranking among the 100 best video games in history.<br><br>Today, Paul Cuisset, the creator of the original game, invites you to play again as Conrad B. Hart, the young agent of the GBI (Galactic Bureau of Investigation).
-            .home__gallery__desktop__content__section 
-              h1 Microids  
-              p Since 1985, our mission has been to provide rich and memorable experiences for the whole family.<br><br>In our own studios in France, as well as in collaboration with outstanding partners like Pendulo Studios and Eden Games, we create and distribute video games for PC, consoles and smartphones.
-            .home__gallery__desktop__content__section 
-              h1 Athletes on the mat 
-              p  In 2013, Athletes On The Mat started their activities and became one of the major brands of many BJJ players and underground artists.<br><br>Athletes On The Mat (called ATHOM) grew to embody the BJJ culture and play an integral part in its constant regeneration. BJJ competitors, grapplers, MMA fans, surfers and skaters, all gravitated toward ATHOM.<br><br>ATHOM found its genesis from the mat, and established itself as a brand known for its quality, style, and authenticity.
-        img.pixel3(src="pixels.svg" data-speed="2.5")
-        .home__gallery__right 
-          .home__gallery__desktop__photos
-            figure.home__gallery__desktop__photo.red 
-              img.js-tilt(src="1992-scale.jpg")
-            figure.home__gallery__desktop__photo.green 
-              img.js-tilt(src="microids-scale.jpg")
-            figure.home__gallery__desktop__photo.pink 
-              img.js-tilt(src="athom-scale.jpg")
-      .home__shop__title
-        h1.home__shop__title__introduction(data-speed="clamp(1.1)") flashback 2
-        .home__shop__title__introduction__wrapper
-          p.home__shop__title__introduction(data-speed="clamp(1.1)") In the 22nd century, the peace of the United Worlds extends throughout the Solar System — but this tranquility is threatened by the Morph invasion led by the fearsome General Lazarus.<br><br>In search of his lifelong friend, Ian, and with the help of his few allies — including A.I.S.H.A., his iconic AI-powered weapon — Conrad, once again, dives into a heart-pounding adventure full of twists, turns and revelations!<br><br>A gripping, fluid and intricate platform shooter, including exploration, puzzle solving and, of course, adventure!
+
+      section.home__genesis(data-client="GENESIS")
+
       include ../partials/footer.pug
+    

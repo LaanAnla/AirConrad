@@ -9,7 +9,7 @@
   z-index: z('navigation');
 
   display: flex;
-  flex: 1;
+  //flex: 1;
   align-items: center;
 }
 
@@ -25,6 +25,14 @@
   background-color: #0000004f;
 }
 
+.navigation__logo__wrapper {
+  width: 50vw;
+}
+
+.navigation__list__wrapper {
+  width: 50vw;
+}
+
 .navigation__link {
  height: 100px;
  width: auto;
@@ -35,12 +43,17 @@
 .navigation__link__icon {
   height: auto;
   width: 250px;
-  margin: 2rem 6rem 2rem 6rem;
+  margin-left: 5rem;
+  //margin: 2rem 6rem 2rem 6rem;
+
+  @include media('<phone') {
+    width: 150px;
+  }
 }
 
 .navigation__list__main {
-  width: 250px;
-  margin: 2rem 6rem 2rem 6rem;
+  width: 100%;
+  //margin: 2rem 6rem 2rem 6rem;
 }
 
 .navigation__list__link {
@@ -51,8 +64,22 @@
   text-transform: uppercase;
   text-decoration: none;
   border: none;
-  margin: 0 3rem 0 3rem;
+  margin-right: 5rem;
   width: 100%;
+
+  @include media('<phone') {
+    font-size: 15px;
+  }
+}
+
+ul.navigation__list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+li.navigation__list__item {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .has-scrolled .navigation__wrapper {
@@ -68,4 +95,8 @@
   @extend %p;
   text-transform: uppercase;
   text-align: center;
+
+  @include media('<phone') {
+    display: none;
+  }
 }

@@ -1,10 +1,12 @@
 nav.navigation 
   .navigation__wrapper
-    a.navigation__link(href=('/'))
-      img.navigation__link__icon(src='logo_brands2.svg')
+    .navigation__logo__wrapper
+      a.navigation__link(href=('/'))
+        img.navigation__link__icon(src='logo_brands2.svg')
     .navigation__section
       h2.navigation__section__title WELCOME
-    .navigation__list__main
-      ul.navigation__list
-        li.navigation__list__item 
-          a.navigation__list__link(href='https://www.athletesonthemat.com', target='_blank') Official shop
+    .navigation__list__wrapper
+      .navigation__list__main
+        ul.navigation__list
+          li.navigation__list__item 
+            a.navigation__list__link(href='https://www.athletesonthemat.com', target='_blank') Official shop

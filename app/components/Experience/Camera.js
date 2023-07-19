@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import Experience from "./Experience"
+import { gsap } from 'gsap'
 
 export default class Camera {
   constructor() {
@@ -23,10 +24,21 @@ export default class Camera {
   }
 
   setInstance2() {
-    this.instance2 = new THREE.PerspectiveCamera( 15, window.innerWidth / window.innerHeight, 0.01, 100 );
+    let mm = gsap.matchMedia()
+
+    this.instance2 = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 0.01, 100 );
     this.instance2.position.z = 3
-    //this.instance2.position.set( 1, 1, 3 )
     this.scene2.add(this.instance2)
+    this.instance2.updateProjectionMatrix()
+
+    mm.add("(min-width: 800px)", () => {
+      this.instance2 = new THREE.PerspectiveCamera( 15, this.sizes.width / this.sizes.height, 0.01, 100 );
+      this.instance2.position.z = 3
+      //this.instance2.position.set( 1, 1, 3 )
+      this.scene2.add(this.instance2)
+      this.instance2.updateProjectionMatrix()
+    })
+    mm.revert()
   }
 
   update() {

@@ -9,4 +9,8 @@
   font-size: clamp(1rem, 1.8vw, 2.5em);
   font-family: 'Pixeloid Sans';
   color: #ffffff;
+
+  @include media('<phone') {
+    font-size: 15px;
+  }
 }
