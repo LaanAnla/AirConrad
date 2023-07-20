@@ -14,9 +14,26 @@ export default class Preloader extends Component {
         cover: document.querySelector('.preloader__brands')
       }
     })
+    this.body = document.querySelector('body')
 
-    this.createVideo()
-    this.skipPreloader()
+    this.setPreloader()
+  
+  }
+
+  setPreloader() {
+    if(this.body.className === 'desktop') {
+      this.createVideo()
+      this.skipPreloader()
+    } else {
+      gsap.to(document.querySelector('body'), {
+        overflow: 'hidden'
+      })
+      this.incrementValue() 
+      setTimeout(() => {
+        this.onLoaded()
+        this.hide()
+      }, "1500");
+    }
   }
 
 

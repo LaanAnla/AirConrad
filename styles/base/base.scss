@@ -1,9 +1,19 @@
 html {
-  font-size: calc(100vw / 1920 * 10)
+  font-size: calc(100vw / 1920 * 10);
+  @extend %cover;
+  background-color: #222222;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; 
 }
 
 body {
-  //background-color: #222222;
+  @extend %cover;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; 
   background-color: #000000;
 }
 
@@ -14,7 +24,7 @@ body {
 canvas#webgl {
   display: block;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   z-index: -1;
 }
 
