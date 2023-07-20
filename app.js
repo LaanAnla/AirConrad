@@ -22,6 +22,7 @@ const port = 3000
 
 const prismic = require('@prismicio/client')
 const fetch = require('node-fetch') //version v2
+const UAParser = require('ua-parser-js')
 
 const repoName = process.env.PRISMIC_ENDPOINT
 const accessToken = process.env.PRIMSIC_ACCESS_TOKEN
@@ -36,6 +37,12 @@ app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use((req, res, next) => {
+  const ua = UAParser(req.headers['user-agent'])
+
+  res.locals.isDesktop = ua.device.type === undefined
+  res.locals.isPhone = ua.device.type === 'mobile'
+  res.locals.isTablet = ua.device.type === 'tablet'
+  console.log(res.locals.isDesktop, res.locals.isPhone, res.locals.isTablet)
   res.locals.ctx = {
     prismic,
   }

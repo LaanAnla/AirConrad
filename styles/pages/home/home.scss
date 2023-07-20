@@ -222,6 +222,10 @@ section.home__ps5__rules {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include media('<phone') {
+    height: 100%;
+  }
 }
 
 .home__ps5__rules__section {

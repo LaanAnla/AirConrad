@@ -1,9 +1,9 @@
 block variables
 doctype html
-html(class= isDesktop ? "desktop" : isTablet ? "tablet" : isPhone ? "phone" : "" lang="en")
+html(lang="en")
   head
     include head
-  body
+  body(class=isDesktop ? "desktop" : isTablet ? "tablet" : isPhone ? "phone" : "")
     include preloader
     include cursor
     include navigation
