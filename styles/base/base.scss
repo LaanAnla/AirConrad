@@ -1,11 +1,21 @@
 html {
   font-size: calc(100vw / 1920 * 10);
   @extend %cover;
-  background-color: #222222;
+  // position: fixed;
+  // top:0;
+  // left: 0;
+  // width: 100vw;
+  min-height: 100vw;
+  background-color: #f40000;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden; 
+
+  @include media('<phone') {
+    height: fill-available;
+    height: -webkit-fill-available;
+  }
 }
 
 body {
@@ -15,6 +25,12 @@ body {
   box-sizing: border-box;
   overflow-x: hidden; 
   background-color: #000000;
+
+  @include media('<phone') {
+    min-height: 100vh;
+    min-height: fill-available;
+    min-height: -webkit-fill-available;
+  }
 }
 
 .preloader__scroll {
@@ -24,7 +40,7 @@ body {
 canvas#webgl {
   display: block;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   z-index: -1;
 }
 

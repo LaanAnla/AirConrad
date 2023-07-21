@@ -99,7 +99,8 @@ section.home__collection {
   z-index: z('preloader');
 
   @include media('<phone') {
-    height: 350px;
+    left: 150px;
+    height: 250px;
     top: 550px;
   }
 }
