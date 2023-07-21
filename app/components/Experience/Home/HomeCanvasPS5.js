@@ -15,6 +15,7 @@ export default class HomeCanvasPS5 {
     this.camera = this.experience.camera.instance2
     this.time = this.experience.time
     this.gltfLoader = new GLTFLoader()
+    this.body = document.querySelector('body')
       
     this.addObjects()
     this.makeStars()
@@ -95,10 +96,12 @@ export default class HomeCanvasPS5 {
   }
 
   resize() {
-    this.camera.aspect = this.sizes.width / this.sizes.height
-    this.renderer.setSize( this.sizes.width, this.sizes.height );
-    this.renderer.render( this.scene, this.camera );
-    this.camera.updateProjectionMatrix()
+    if(this.body.classList === 'desktop') {
+      this.camera.aspect = this.sizes.width / this.sizes.height
+      this.renderer.setSize( this.sizes.width, this.sizes.height );
+      this.renderer.render( this.scene, this.camera );
+      this.camera.updateProjectionMatrix()
+    }
   }
 
   update() {
