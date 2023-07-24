@@ -141,6 +141,8 @@ h2.home__ps5__title__introduction {
   @include media('<phone') {
     flex-direction: column;
     height: 100vh;
+    gap: 50px;
+    margin-top: 50px;
   }
 }
 
@@ -149,8 +151,8 @@ figure.home__collection__product {
   width: 500px;
 
   @include media('<phone') {
-    height: 90vw;
-    width: 90vw;
+    height: 80vw;
+    width: 80vw;
   }
 }
 
