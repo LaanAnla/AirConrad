@@ -22,8 +22,16 @@ export default class Home extends Page {
         images : document.querySelectorAll('.home__gallery__desktop__photos')
       }
     })
+
+    this.setVH()
   } 
 
+  setVH() {
+
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+  
   create() {
     
     gsap.set(document.querySelector('.home__banner__media'), { autoAlpha: 1})
@@ -67,7 +75,8 @@ export default class Home extends Page {
         },
         onLeaveBack: ()=> {
           gsap.to(item, {
-            autoAlpha: 0
+            y: 100,
+            autoAlpha: 0,
           })
         }
       })
