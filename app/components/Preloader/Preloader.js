@@ -16,15 +16,8 @@ export default class Preloader extends Component {
     })
     this.body = document.querySelector('body')
 
-    this.setVH()
     this.setPreloader()
   
-  }
-
-  setVH() {
-
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
 
   setPreloader() {
