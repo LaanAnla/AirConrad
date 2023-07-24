@@ -23,14 +23,7 @@ export default class Home extends Page {
       }
     })
 
-    this.setVH()
   } 
-
-  setVH() {
-
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
   
   create() {
     
