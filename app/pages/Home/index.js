@@ -27,7 +27,7 @@ export default class Home extends Page {
   create() {
     
     gsap.set(document.querySelector('.home__banner__media'), { autoAlpha: 1})
-    //gsap.set('body', { overflow: 'hidden'})
+    gsap.set(document.querySelector('body'), { overflow: 'hidden'})
     const tl = gsap.timeline()
     tl
     .to(document.querySelector('body'), {
@@ -38,10 +38,10 @@ export default class Home extends Page {
       this.item =  null
     )
 
-    // this.pining = new Pining(
-    //   this.start = document.querySelector('.home__gallery'),
-    //   this.pinned = document.querySelector('.home__gallery__right')
-    // )
+    this.pining = new Pining(
+      this.start = document.querySelector('.home__genesis'),
+      this.pinned = document.querySelector('.home__genesis__right')
+    )
 
     // const element = document.querySelectorAll(".js-tilt");
     // element.forEach(el =>{
@@ -51,25 +51,27 @@ export default class Home extends Page {
     //   });
     // })
 
-    // const flashback2 = document.querySelector('.home__shop__title__introduction__wrapper')
-    // gsap.set(flashback2, { y: 100 })
-    // ScrollTrigger.create({
-    //   trigger: flashback2,
-    //   start: 'top center+=20%',
-    //   end: "top 70%",
-    //   duration: 0.8,
-    //   onEnter: ()=> {
-    //     gsap.to(flashback2, {
-    //       autoAlpha: 1,
-    //       y:0
-    //     })
-    //   },
-    //   onLeaveBack: ()=> {
-    //     gsap.to(flashback2, {
-    //       autoAlpha: 0
-    //     })
-    //   }
-    // })
+    const flashback2 = document.querySelectorAll('.movement')
+    flashback2.forEach(item => {
+      gsap.set(item, { y: 100, autoAlpha: 0 })
+      ScrollTrigger.create({
+        trigger: item,
+        start: 'top bottom-=100',
+        end: "top 60%",
+        duration: 0.8,
+        onEnter: ()=> {
+          gsap.to(item, {
+            autoAlpha: 1,
+            y:0
+          })
+        },
+        onLeaveBack: ()=> {
+          gsap.to(item, {
+            autoAlpha: 0
+          })
+        }
+      })
+    })
 
     const colors = ["#906030", "#911441",  "#767AB9", "#5C5EA7"]
     gsap.set(".step__line", {background:gsap.utils.wrap(colors)})
