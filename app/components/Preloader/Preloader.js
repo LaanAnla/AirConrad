@@ -29,19 +29,11 @@ export default class Preloader extends Component {
 
         return false;
     }
-    // if(this.body.className === 'desktop') {
-    //   this.createVideo()
-    //   this.skipPreloader()
-    // } else {
-      // gsap.to(document.querySelector('body'), {
-      //   overflow: 'hidden'
-      // })
       this.incrementValue() 
       setTimeout(() => {
         this.onLoaded()
         this.hide()
       }, "1000");
-    // }
   }
 
 
@@ -62,7 +54,6 @@ export default class Preloader extends Component {
       if(this.value < 100) {
           this.value++;
           this.elements.number.innerHTML = `${Math.round(this.value)}%`
-          //this.elements.number.innerHTML = 'GO!'
       } else if(this.value === 100) {
         this.elements.number.innerHTML = 'RISE TO THE CHALLENGE'
       } else {
@@ -72,9 +63,7 @@ export default class Preloader extends Component {
   }
 
   onLoaded() {
-    // this.emit('completed')
     gsap.to(this.elements.cover, {
-      //autoAlpha: 0,
       scale:0,
       duration: 0.4,
       ease: "Power4.out",
@@ -85,7 +74,6 @@ export default class Preloader extends Component {
   skipPreloader() {
     this.elements.button.addEventListener('click', ()=> {
       this.hide()
-      //this.hidden()
     })
   }
 
@@ -98,8 +86,6 @@ export default class Preloader extends Component {
       onComplete: ()=> {
         this.destroy()      }
     })
-    //const tl = new gsap.timeline()
-    
     tl.to(this.elements.video, {
         autoAlpha: 0,
         duration: 0.2

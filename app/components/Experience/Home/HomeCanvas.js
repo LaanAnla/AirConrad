@@ -18,12 +18,6 @@ export default class HomeCanvas {
     this.camera = this.experience.camera
     this.time = this.experience.time
 
-
-    // var frustumSize = 1;
-    // var aspect = this.sizes.width / this.sizes.height;
-    // this.camera.instance = new THREE.OrthographicCamera(frustumSize / -2, frustumSize / 2, frustumSize / 2, frustumSize / -2, -1000, 1000);
-    // this.camera.instance.position.set(0, 0, 2);
-
     this.mouse = {
       x: 0,
       y: 0,

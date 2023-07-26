@@ -70,24 +70,24 @@ app.get('/', async (req, res) => {
 )
 
 // Query for the mentions path.
-app.get('/mentions', async (req, res) => {
-  const preloader = await client.getSingle('preloader')
-  console.log(preloader.data)
-  // Here we are retrieving the document from your API endpoint
-  const document = await client.get({ 
-    predicates: [ prismic.predicate.at("document.type", 'mentions')]
-  }).then( 
-    response => {
-      // Destructuring assignment
-      const { results } = response;
-      // [ home ] = results;
-      // console.log(home.data);
-        res.render('pages/mentions', {
-          preloader,
-        })
-    })
-  }
-)
+// app.get('/mentions', async (req, res) => {
+//   const preloader = await client.getSingle('preloader')
+//   console.log(preloader.data)
+//   // Here we are retrieving the document from your API endpoint
+//   const document = await client.get({ 
+//     predicates: [ prismic.predicate.at("document.type", 'mentions')]
+//   }).then( 
+//     response => {
+//       // Destructuring assignment
+//       const { results } = response;
+//       // [ home ] = results;
+//       // console.log(home.data);
+//         res.render('pages/mentions', {
+//           preloader,
+//         })
+//     })
+//   }
+// )
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

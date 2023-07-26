@@ -2,7 +2,6 @@ import * as THREE from 'three'
 import Experience from '../Experience'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { gsap } from 'gsap'
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
 
@@ -15,7 +14,6 @@ export default class HomeCanvasPS5 {
     this.scene = this.experience.scene2
     this.camera = this.experience.camera.instance2
     this.time = this.experience.time
-    // this.gltfLoader = new GLTFLoader()
     this.body = document.querySelector('body')
       
     this.addObjects()
@@ -43,13 +41,9 @@ export default class HomeCanvasPS5 {
       },
       (progress) =>
       {
-          console.log('progress')
-          console.log(progress)
       },
       (error) =>
       {
-          console.log('error')
-          console.log(error)
       }
     )
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.8)
@@ -79,7 +73,6 @@ export default class HomeCanvasPS5 {
       const particlesMaterial = new THREE.PointsMaterial({
         size: 0.02,
         sizeAttenuation: true,
-        //color: 'red',
         depthWrite: false,
         blending: THREE.AdditiveBlending,
         vertexColors: true
@@ -97,7 +90,6 @@ export default class HomeCanvasPS5 {
     this.controls.autoRotate = true
     this.controls.autoRotateSpeed = 0.7
     this.controls.dampingFactor = 0.05;
-    //this.controls.maxPolarAngle = Math.PI / 2
   }
 
   resize() {
@@ -112,6 +104,4 @@ export default class HomeCanvasPS5 {
   update() {
     this.controls.update()
   }
-
-
 }

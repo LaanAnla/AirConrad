@@ -98,14 +98,7 @@ export default class Home extends Page {
     this.cursor = new Cursor()
   }
 
-  // createNavigation() {
-  //  this.animation = new NavigationAnim() 
-  // }
-
   createScroll() {
     this.scroll = new Scroll()
   }
-
-
-
 }
