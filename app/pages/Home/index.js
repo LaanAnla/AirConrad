@@ -35,7 +35,7 @@ export default class Home extends Page {
 
       setTimeout(() => {
           this.banner.removeEventListener('wheel', preventScroll)
-      }, 2000)
+      }, 500)
 
       return false;
     }

@@ -33,14 +33,14 @@ export default class Preloader extends Component {
     //   this.createVideo()
     //   this.skipPreloader()
     // } else {
-      gsap.to(document.querySelector('body'), {
-        overflow: 'hidden'
-      })
+      // gsap.to(document.querySelector('body'), {
+      //   overflow: 'hidden'
+      // })
       this.incrementValue() 
       setTimeout(() => {
         this.onLoaded()
         this.hide()
-      }, "2000");
+      }, "1000");
     // }
   }
 

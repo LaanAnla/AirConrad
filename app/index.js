@@ -43,7 +43,7 @@ class App {
       this.createExperience()
       setTimeout(() => {
         this.createPages()
-      }, "1000");
+      }, "500");
     })
   }
 
