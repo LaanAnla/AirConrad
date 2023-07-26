@@ -3,6 +3,7 @@ import Experience from '../Experience'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { gsap } from 'gsap'
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
 
 export default class HomeCanvasPS5 {
@@ -14,7 +15,7 @@ export default class HomeCanvasPS5 {
     this.scene = this.experience.scene2
     this.camera = this.experience.camera.instance2
     this.time = this.experience.time
-    this.gltfLoader = new GLTFLoader()
+    // this.gltfLoader = new GLTFLoader()
     this.body = document.querySelector('body')
       
     this.addObjects()
@@ -24,8 +25,12 @@ export default class HomeCanvasPS5 {
   }
 
   addObjects() {
+    this.dracoLoader = new DRACOLoader()
+    this.dracoLoader.setDecoderPath('/draco/')
+    this.gltfLoader = new GLTFLoader()
+    this.gltfLoader.setDRACOLoader(this.dracoLoader)
     this.gltfLoader.load(
-      'scene.gltf', (gltf) =>
+      'scene3.gltf', (gltf) =>
       {
           const box = new THREE.Box3().setFromObject( gltf.scene );
           const center = box.getCenter( new THREE.Vector3() );
