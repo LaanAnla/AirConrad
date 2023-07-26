@@ -30,7 +30,7 @@ export default class HomeCanvasPS5 {
     this.gltfLoader = new GLTFLoader()
     this.gltfLoader.setDRACOLoader(this.dracoLoader)
     this.gltfLoader.load(
-      'scene3.gltf', (gltf) =>
+      'scene.gltf', (gltf) =>
       {
           const box = new THREE.Box3().setFromObject( gltf.scene );
           const center = box.getCenter( new THREE.Vector3() );
