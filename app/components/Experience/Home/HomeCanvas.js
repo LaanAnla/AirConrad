@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import Experience from '../Experience'
-import conrad from '/shared/conrad-club.jpg'
+import conrad from '/shared/conrad-club.webp'
 import vertex from '/shaders/vertex.glsl'
 import fragment from '/shaders/fragment.glsl'
 
