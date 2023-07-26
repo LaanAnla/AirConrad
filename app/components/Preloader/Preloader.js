@@ -21,10 +21,18 @@ export default class Preloader extends Component {
   }
 
   setPreloader() {
-    if(this.body.className === 'desktop') {
-      this.createVideo()
-      this.skipPreloader()
-    } else {
+    this.element.addEventListener('wheel', preventScroll, {passive: false});
+
+    function preventScroll(e){
+        e.preventDefault();
+        e.stopPropagation();
+
+        return false;
+    }
+    // if(this.body.className === 'desktop') {
+    //   this.createVideo()
+    //   this.skipPreloader()
+    // } else {
       gsap.to(document.querySelector('body'), {
         overflow: 'hidden'
       })
@@ -32,8 +40,8 @@ export default class Preloader extends Component {
       setTimeout(() => {
         this.onLoaded()
         this.hide()
-      }, "1500");
-    }
+      }, "2000");
+    // }
   }
 
 

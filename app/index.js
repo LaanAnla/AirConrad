@@ -60,10 +60,10 @@ class App {
 
     this.page = this.pages[this.template]
     this.page.create()
-    this.page.createCursor()
     this.page.createScroll()
     this.page.createBackToTop()
     this.page.show()
+    this.page.createCursor()
   }
 
   createExperience() {

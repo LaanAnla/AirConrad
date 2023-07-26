@@ -19,7 +19,8 @@ export default class Home extends Page {
       elements : {
         navigation: document.querySelector('.navigation'),
         button : '.preloader__video__close',
-        images : document.querySelectorAll('.home__gallery__desktop__photos')
+        images : document.querySelectorAll('.home__gallery__desktop__photos'),
+        banner : document.querySelector('.home__banner')
       }
     })
 
@@ -27,13 +28,19 @@ export default class Home extends Page {
   
   create() {
     
-    gsap.set(document.querySelector('.home__banner__media'), { autoAlpha: 1})
-    gsap.set(document.querySelector('body'), { overflow: 'hidden'})
-    const tl = gsap.timeline()
-    tl
-    .to(document.querySelector('body'), {
-      overflow: 'visible'
-    }, 3.8)
+    this.banner = document.querySelector('.home__banner')
+    const preventScroll = (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+
+      setTimeout(() => {
+          this.banner.removeEventListener('wheel', preventScroll)
+      }, 2000)
+
+      return false;
+    }
+    this.banner.addEventListener('wheel', preventScroll, {passive: false})
+
     this.animation = new Split(
       this.text = document.querySelector('.home__banner__title'),
       this.item =  null
@@ -43,14 +50,6 @@ export default class Home extends Page {
       this.start = document.querySelector('.home__genesis'),
       this.pinned = document.querySelector('.home__genesis__right')
     )
-
-    // const element = document.querySelectorAll(".js-tilt");
-    // element.forEach(el =>{
-    //   VanillaTilt.init(el);
-    //   el.addEventListener("tiltChange", {
-    //     perspective: 2000,
-    //   });
-    // })
 
     const flashback2 = document.querySelectorAll('.movement')
     flashback2.forEach(item => {
