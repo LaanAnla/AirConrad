@@ -1,10 +1,11 @@
 import Preloader from './components/Preloader/Preloader';
 import Home from './pages/Home'
-import Mentions from './pages/Mentions'
+//import Mentions from './pages/Mentions'
 import Experience from './components/Experience/Experience.js'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { gsap } from "gsap"
+import Stats from 'stats.js'
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -23,8 +24,15 @@ class App {
     this.canvas = document.querySelector('canvas#webgl')
     this.createPrelaoder()
     this.onResize()
+    //this.createStats()
     this.update()
     this.createJump()
+  }
+
+  createStats() {
+    this.stats = new Stats()
+    this.stats.showPanel(0)
+    document.body.appendChild(this.stats.dom)
   }
 
   createJump() {
@@ -55,7 +63,7 @@ class App {
   createPages() {
     this.pages = {
       home: new Home(),
-      mentions: new Mentions()
+      //mentions: new Mentions()
     }
 
     this.page = this.pages[this.template]
@@ -82,6 +90,8 @@ class App {
   }
 
   update() {
+    //this.stats.begin()
+
     if(this.experience && this.experience.update) {
       this.experience.update()
     }
@@ -90,6 +100,7 @@ class App {
       this.page.update()
     }
     this.frame = window.requestAnimationFrame(this.update.bind(this))
+    //this.stats.end()
   }
 
 }

@@ -4,7 +4,6 @@ import Pining from "../../utils/Pining";
 import Back from "../../utils/Back";
 import Cursor from "../../utils/Cursor";
 import { gsap } from "gsap"
-import VanillaTilt from 'vanilla-tilt';
 import Scroll from "../../utils/Scroll";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

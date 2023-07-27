@@ -23,7 +23,8 @@ export default class Renderer {
 
     this.instance = new THREE.WebGLRenderer({
       canvas: this.div,
-      antialias: true,
+      powerPreference: 'high-performance',
+      antialias: false,
       alpha: true,
       autoClear : true
     })
@@ -40,7 +41,8 @@ export default class Renderer {
     
     this.instance2 = new THREE.WebGLRenderer({
       canvas: this.div2,
-      antialias: true,
+      powerPreference: 'high-performance',
+      antialias: false,
       alpha: true,
       autoClear : true
     })

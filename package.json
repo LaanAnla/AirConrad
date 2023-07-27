@@ -37,6 +37,7 @@
     "node-fetch": "^2.6.11",
     "nodemon": "^2.0.22",
     "pug": "^3.0.2",
+    "stats.js": "^0.17.0",
     "three": "^0.153.0",
     "ua-parser-js": "^1.0.35",
     "vanilla-tilt": "^1.8.0"

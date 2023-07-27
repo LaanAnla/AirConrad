@@ -15,8 +15,10 @@ html {
   height: -webkit-fill-available;
 
   @include media('<phone') {
-    height: fill-available;
-    height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
   }
 }
 
@@ -31,11 +33,12 @@ body {
   // height: -webkit-fill-available;
   height: calc(100 * var(--vh)); /* Equivalent de 100vh */
 
-  // @include media('<phone') {
-  //   min-height: 100vh;
-  //   min-height: fill-available;
-  //   min-height: -webkit-fill-available;
-  // }
+  @include media('<phone') {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
 }
 
 .preloader__scroll {

@@ -36,24 +36,16 @@ export default class HomeCanvasPS5 {
           gltf.scene.children[0].position.y += ( gltf.scene.children[0].position.y - center.y );
           gltf.scene.children[0].position.z += ( gltf.scene.children[0].position.z - center.z );
           this.scene.add(gltf.scene.children[0])
-          console.log('success')
-          console.log(gltf)
       },
-      (progress) =>
-      {
-      },
-      (error) =>
-      {
-      }
     )
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8)
-    this.scene.add(ambientLight)   
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.9)
+    this.scene.add(ambientLight)  
   }
 
   makeStars() {
     THREE.ColorManagement.enabled = false
     const particlesGeometry = new THREE.BufferGeometry()
-    const count = 1000
+    const count = 500
     const position = new Float32Array(count * 3)
     const colors = new Float32Array(count * 3)
 
@@ -71,7 +63,7 @@ export default class HomeCanvasPS5 {
       new THREE.BufferAttribute(colors, 3))
 
       const particlesMaterial = new THREE.PointsMaterial({
-        size: 0.02,
+        size: 0.015,
         sizeAttenuation: true,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
