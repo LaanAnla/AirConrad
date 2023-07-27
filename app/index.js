@@ -22,8 +22,6 @@ class App {
       normalizeScroll: true,
     })
 
-    console.log(window.innerHeight)
-    document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`)
     this.canvas = document.querySelector('canvas#webgl')
     this.createPrelaoder()
     this.onResize()
@@ -48,6 +46,8 @@ class App {
   }
 
   createPrelaoder() {
+    console.log(window.innerHeight)
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`)
     this.preloader = new Preloader()
     this.preloader.once('completed', () => {
       this.createContent()
