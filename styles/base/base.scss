@@ -13,10 +13,6 @@ html {
   overflow-x: hidden; 
   height: fill-available;
   height: -webkit-fill-available;
-
-  @include media('<phone') {
-    height: -webkit-fill-available;
-  }
 }
 
 body {
@@ -26,14 +22,8 @@ body {
   box-sizing: border-box;
   overflow-x: hidden; 
   background-color: #000000;
-  // height: fill-available;
-  // height: -webkit-fill-available;
-  // height: calc(100 * var(--vh)); /* Equivalent de 100vh */
-
-  @include media('<phone') {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-  }
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 .preloader__scroll {
