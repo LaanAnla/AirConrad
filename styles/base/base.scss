@@ -15,7 +15,7 @@ html {
   height: -webkit-fill-available;
 
   @include media('<phone') {
-    height: 100dvh;
+    height: -webkit-fill-available;
   }
 }
 
@@ -31,7 +31,8 @@ body {
   // height: calc(100 * var(--vh)); /* Equivalent de 100vh */
 
   @include media('<phone') {
-    height: 100dvh;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
 }
 
