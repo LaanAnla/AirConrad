@@ -31,7 +31,7 @@ export default class Camera {
     this.scene2.add(this.instance2)
     this.instance2.updateProjectionMatrix()
 
-    mm.add("(min-width: 800px)", () => {
+    mm.add("(min-width: 1100px)", () => {
       this.instance2 = new THREE.PerspectiveCamera( 15, this.sizes.width / this.sizes.height, 0.01, 100 );
       this.instance2.position.z = 3
       this.scene2.add(this.instance2)

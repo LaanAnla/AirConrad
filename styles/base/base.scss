@@ -1,3 +1,7 @@
+:root {
+  --vh: 1vh;
+}
+
 html {
   font-size: calc(100vw / 1920 * 10);
   @extend %cover;
@@ -7,9 +11,6 @@ html {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden; 
-  height:var(--vh, 100vh)
-  // height: fill-available;
-  // height: -webkit-fill-available;
 }
 
 body {
@@ -20,8 +21,7 @@ body {
   overflow-x: hidden; 
   background-color: #000000;
   min-height: 100vh;
-  height:var(--vh, 100vh)
-  //min-height: -webkit-fill-available;
+  min-height: calc(var(--vh, 1vh) * 100);
 }
 
 .preloader__scroll {
