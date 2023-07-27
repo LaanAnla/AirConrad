@@ -43,7 +43,7 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: "[id].css"
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
   ],
   module: {
     rules: [

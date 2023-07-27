@@ -22,7 +22,6 @@ class App {
     })
 
     this.canvas = document.querySelector('canvas#webgl')
-    this.createHeight()
     this.createPrelaoder()
     this.onResize()
     this.createStats()
@@ -34,11 +33,6 @@ class App {
     this.stats = new Stats()
     this.stats.showPanel(0)
     document.body.appendChild(this.stats.dom)
-  }
-
-  createHeight() {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
 
   createJump() {
@@ -93,7 +87,6 @@ class App {
     if(this.experience && this.experience.onResize) {
       this.experience.resize()
     }
-    this.createHeight()
   }
 
   update() {
@@ -106,6 +99,7 @@ class App {
     if(this.page && this.page.update) {
       this.page.update()
     }
+
     this.frame = window.requestAnimationFrame(this.update.bind(this))
     this.stats.end()
   }
