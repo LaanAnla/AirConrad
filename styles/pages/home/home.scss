@@ -390,6 +390,7 @@ section.home__genesis {
 
 .home__genesis p {
   @extend %p;
+  font-size: 25px;
   color: #ffffff;
   line-height: 1.2;
 
@@ -545,6 +546,7 @@ h1.home__end__title__introduction {
 p.home__end__title__introduction {
   color: #ffffff;
   @extend %p;
+  font-size: 25px;
   padding: 50px 0 50px 0;
   text-align: center;
 

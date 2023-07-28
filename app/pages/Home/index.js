@@ -50,7 +50,7 @@ export default class Home extends Page {
       this.pinned = document.querySelector('.home__genesis__right')
     )
 
-    const flashback2 = document.querySelectorAll('.movement')
+    const flashback2 = document.querySelectorAll(['.movement', 'p.photo', 'p.price'])
     flashback2.forEach(item => {
       gsap.set(item, { y: 100, autoAlpha: 0 })
       ScrollTrigger.create({
