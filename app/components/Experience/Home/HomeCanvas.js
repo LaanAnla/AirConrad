@@ -57,7 +57,7 @@ export default class HomeCanvas {
 
     let mm = gsap.matchMedia()
     mm.add("(min-width: 1100px)", () => {
-      this.size = 50
+      this.size = 30
     })
 
     const width = this.size
@@ -110,7 +110,7 @@ export default class HomeCanvas {
   updateDataTexture() {
     let data = this.texture.image.data
     for(let i = 0; i < data.length; i+= 4) {
-      data[i] *= 0.99
+      data[i] *= 0.98
       data[i+1] *= 0.99
     }
 

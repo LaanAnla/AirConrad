@@ -378,7 +378,9 @@ section.home__genesis {
   padding-bottom: 15px;
 
   @include media('<phone') {
-    font-size: 25px;
+    // font-size: 25px;
+    // text-align: center;
+    display: none;
   }
 }
 
@@ -393,6 +395,7 @@ section.home__genesis {
 
   @include media('<phone') {
     font-size: 15px;
+    text-align: center;
   }
 }
 
@@ -451,8 +454,8 @@ section.home__genesis {
 }
 
 .home__genesis__mobile__photo img {
-  width: 80vw;
-  height: 80vw;
+  width: 60vw;
+  height: 60vw;
 }
 
 .home__genesis__right {
