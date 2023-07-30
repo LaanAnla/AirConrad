@@ -35,7 +35,6 @@ export default class Experience {
     })
     
     this.createCanvas()
-
   }
 
   createCanvas() {

@@ -31,12 +31,17 @@ h1.home__banner__title {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  font-size: clamp(3.2rem, 70vw, 16rem);
+  //font-size: clamp(3.2rem, 70vw, 16rem);
+  font-size: calc(35px + (140 - 35) * ((100vw - 320px) / (1920 - 320)));
   width: 80%;
   font-family: 'Pixeloid Bold';
   color: #ffffff;
   text-transform: uppercase;
   text-align: center;
+
+  @include media('<phone') {
+    width: 90%;
+  }
 }
 
 .green-text {
@@ -44,7 +49,7 @@ h1.home__banner__title {
 }
 
 .green-text:hover {
-  color:rgb(156, 20, 106)
+  color:#980d40;
 }
 
 .green-text-link {
@@ -124,6 +129,7 @@ h2.home__ps5__title__introduction {
 
   padding: 80px 0 50px 0;
   text-align: center;
+  text-transform: uppercase;
 
   @include media('<phone') {
     font-size: 22px;
@@ -275,6 +281,7 @@ section.home__ps5__rules {
   @extend %h2;
   padding: 50px 0 50px 0;
   text-align: center;
+  text-transform: uppercase;
 
   @include media('<phone') {
     width: 80vw;
@@ -430,6 +437,7 @@ section.home__genesis {
 	display:flex;
 	flex-direction:column;
 	align-items: center;
+  justify-content: center;
 }
 
 .home__genesis__mobile__content {

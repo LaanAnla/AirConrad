@@ -32,8 +32,8 @@ export default class Preloader extends Component {
       this.incrementValue() 
       setTimeout(() => {
         this.onLoaded()
-        this.hide()
-      }, "1000");
+        //this.hide()
+      }, "2000");
   }
 
 
@@ -59,16 +59,39 @@ export default class Preloader extends Component {
       } else {
         clearInterval(interval)
       }
-  }, 10);
+  }, 15);
   }
 
   onLoaded() {
-    gsap.to(this.elements.cover, {
-      scale:0,
-      duration: 0.4,
-      ease: "Power4.out",
-      delay: 3,
+
+    const tl = gsap.timeline()
+    tl
+    .to(document.querySelector('.preloader__brands__image'), {
+      autoAlpha: 0,
+      duration: 0.3,
+      //delay: 0.5
     })
+
+    .to(document.querySelector('.preloader__number__text'), {
+      autoAlpha: 0,
+      duration: 0.3,
+      onComplete: () => {
+        setTimeout(() => {
+          this.hide()
+        }, 1000); // délai de 1 seconde
+      }
+    }, 0)
+
+    // .to(this.elements.cover, {
+    //   //scale:0,
+    //   y: '-100%',
+    //   duration: 0.5,
+    //   ease: "Power4.out",
+    //   //delay: 3,
+    //   onComplete: ()=>{
+    //     this.hide()
+    //   }
+    // }, 0)
   }
 
   skipPreloader() {
@@ -82,18 +105,19 @@ export default class Preloader extends Component {
   }
 
   hide() {
-    const tl = new gsap.timeline({
-      onComplete: ()=> {
-        this.destroy()      }
-    })
-    tl.to(this.elements.video, {
-        autoAlpha: 0,
-        duration: 0.2
-      })
-      tl.to(this.elements.button, {
-        autoAlpha: 0,
-        duration: 0.2
-      },0)
+    // const tl = new gsap.timeline({
+    //   onComplete: ()=> {
+    //     this.destroy()      }
+    // })
+    // tl.to(this.elements.video, {
+    //     autoAlpha: 0,
+    //     duration: 0.2
+    //   })
+    //   tl.to(this.elements.button, {
+    //     autoAlpha: 0,
+    //     duration: 0.2
+    //   },0)
+    this.destroy()
   }
 
   destroy() {

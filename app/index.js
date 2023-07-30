@@ -15,7 +15,7 @@ class App {
 
     
     this.smoother = ScrollSmoother.create({
-      smooth: 2,               // how long (in seconds) it takes to "catch up" to the native scroll position
+      smooth: 2.5,               // how long (in seconds) it takes to "catch up" to the native scroll position
       effects: true,           // looks for data-speed and data-lag attributes on elements
       smoothTouch: true,        // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
       normalizeScroll: true
@@ -24,7 +24,7 @@ class App {
     this.canvas = document.querySelector('canvas#webgl')
     this.createPrelaoder()
     this.onResize()
-    this.createStats()
+    //this.createStats()
     this.update()
     this.createJump()
   }
@@ -90,7 +90,7 @@ class App {
   }
 
   update() {
-    this.stats.begin()
+    //this.stats.begin()
 
     if(this.experience && this.experience.update) {
       this.experience.update()
@@ -101,7 +101,7 @@ class App {
     }
 
     this.frame = window.requestAnimationFrame(this.update.bind(this))
-    this.stats.end()
+    //this.stats.end()
   }
 
 }

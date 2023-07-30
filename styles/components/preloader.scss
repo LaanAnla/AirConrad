@@ -12,21 +12,93 @@
   z-index: z('preloader');
   min-height: -webkit-fill-available;
 
-  @include media('<phone') {
-    display: block;
+  // @include media('<phone') {
+  //   display: block;
+  // }
+}
+
+.preloader__up {
+  width: 100vw;
+  height: 50vh;
+  background-color: #000000;
+  animation: split1 0.9s ease-in forwards ; 
+  animation-delay: 2.3s;
+  z-index: z('preloader');
+
+  @keyframes split1 {
+    to {
+      transform: translateY(-50vh);
+    }
+  }
+} 
+
+.preloader__down {
+  width: 100vw;
+  height: 50vh;
+  background-color: #000000;
+  animation: split2 0.9s ease-in forwards; 
+  animation-delay: 2.3s;
+  z-index: z('preloader');
+
+  @keyframes split2 {
+    to {
+      transform: translateY(50vh);
+    }
   }
 }
 
+.preloader__up__two {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  //background-color: #18e00d;
+  background-color: rgb(24, 224, 13, 0.5);
+  filter: blur(5px);
+  animation: split1 0.7s ease-in forwards ; 
+  animation-delay: 2.5s;;
+
+  @keyframes split1 {
+    to {
+      transform: translateY(-50vh);
+    }
+  }
+} 
+
+.preloader__down__two {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  background-color: rgb(24, 224, 13, 0.5);
+  filter: blur(5px);
+  animation: split2 0.7s ease-in forwards; 
+  animation-delay: 2.5s;
+
+  @keyframes split2 {
+    to {
+      transform: translateY(50vh);
+    }
+  }
+}
+
+
 .preloader__brands {
-  position: relative;
-  //background-color: #911442;
-  background-color: #000000;
+  //position: relative;
+  //background-color: #980d40;
+  //background-color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: z('preloader');
+  //animation: split 2s forwards; 
 }
 
 .preloader__brands__image {

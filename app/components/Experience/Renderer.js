@@ -54,6 +54,7 @@ export default class Renderer {
     this.instance2.shadowMap.type = THREE.PCFSoftShadowMap
     this.instance2.setPixelRatio(Math.min(this.sizes.pixelRatio, 2))
     this.instance2.outputColorSpace = THREE.LinearSRGBColorSpace
+
   }
 
   resize() {

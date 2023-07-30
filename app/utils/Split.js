@@ -47,6 +47,9 @@ export default class Split {
       autoAlpha: 1,
       duration: 1
     })
+    tl.to('.cursor', {
+      autoAlpha: 1
+    },0)
 
     // ScrollTrigger.create({
     //   trigger: '.home__banner__title',
