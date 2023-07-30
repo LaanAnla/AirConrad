@@ -136,12 +136,6 @@ h2.home__ps5__title__introduction {
   }
 }
 
-.home__collection__wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
 .home__collection__product__wrapper {
   width: 100vw;
   height: 100vh;
@@ -155,7 +149,7 @@ h2.home__ps5__title__introduction {
     flex-direction: column;
     height: 100vh;
     gap: 80px;
-    margin-top: 25px;
+    margin-top: 30px;
   }
 }
 
