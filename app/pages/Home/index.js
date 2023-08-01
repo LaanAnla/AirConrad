@@ -1,5 +1,6 @@
 import Page from "../../classes/Page";
 import Split from "../../utils/Split";
+import Navigation from "../../utils/Navigation";
 import Pining from "../../utils/Pining";
 import Back from "../../utils/Back";
 import Cursor from "../../utils/Cursor";
@@ -40,6 +41,8 @@ export default class Home extends Page {
     }
     this.banner.addEventListener('wheel', preventScroll, {passive: false})
 
+    this.navigationAnimation = new Navigation()
+    
     this.animation = new Split(
       this.text = document.querySelector('.home__banner__title'),
       this.item =  null

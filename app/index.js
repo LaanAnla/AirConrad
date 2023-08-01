@@ -1,6 +1,5 @@
 import Preloader from './components/Preloader/Preloader';
 import Home from './pages/Home'
-//import Mentions from './pages/Mentions'
 import Experience from './components/Experience/Experience.js'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
@@ -18,7 +17,8 @@ class App {
       smooth: 2.5,               // how long (in seconds) it takes to "catch up" to the native scroll position
       effects: true,           // looks for data-speed and data-lag attributes on elements
       smoothTouch: true,        // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
-      normalizeScroll: true
+      normalizeScroll: true,
+      // speed: 1.5
     })
 
     this.canvas = document.querySelector('canvas#webgl')

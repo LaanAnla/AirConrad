@@ -58,6 +58,7 @@
 
 .navigation__list__link {
   color: #ffffff;
+  position: relative;
   // @extend %p;
   font-size: clamp(1.2em, 1.4vw, 2.6em);
   font-family: 'Pixeloid Sans';
@@ -66,10 +67,33 @@
   border: none;
   margin-right: 5rem;
   width: 100%;
+  overflow: hidden;
+  padding-bottom: 3px;
 
   @include media('<phone') {
     font-size: 15px;
   }
+}
+
+.navigation__list__link:after {
+  display: block;
+  content: '';
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: translateX(-101%);
+}
+
+.navigation__list__link:hover:after {
+  transition: transform 0.3s;
+  transform: translateX(0);
+}
+
+.animate-out:after {
+  transition: transform 0.3s;
+  transform: translateX(100%);
 }
 
 ul.navigation__list {
@@ -91,7 +115,7 @@ li.navigation__list__item {
 }
 
 .navigation__section__title {
-  color: #ffffff;
+  color: green;
   @extend %p;
   text-transform: uppercase;
   text-align: center;
