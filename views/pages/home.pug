@@ -89,42 +89,56 @@ block content
           .home__ps5__rules__title
             .home__ps5__rules__h2__wrapper
               h2 Follow these steps and try to win a PS5 
-            .home__ps5__rules__step
-              .step__one 
-                .step__number 
-                  p 1
-                .step__lines
-                  .step__line
-                .step__text
-                  p Buy 1 or more products ✅
-              .step__one
-                .step__number 
-                  p 2
-                .step__lines
-                  .step__line
-                .step__text
-                  p
-                    | Follow
-                    | &nbsp;
-                    a.step__text__link(href="https://www.instagram.com/athletesonthemat/" rel="noreferrer noopener" target="_blank")
-                      | athletesonthemat 
-                    | &nbsp;
-                    | on Instagram ✅
-              .step__one
-                .step__number
-                  p 3
-                .step__lines 
-                  .step__line
-                .step__text
-                  p Like and Tag 2 friends on the "air conrad" post on instagram  ✅
-              .step__one
-                .step__number   
-                  p 4
-                .step__lines
-                  .step__line 
-                .step__text
-                  p Winner will be drawn at random on 23 November 2023 on instagram ✅
+            if isDesktop
+              .home__ps5__rules__step
+                .step__one 
+                  .step__number 
+                    p 1
+                  .step__lines
+                    .step__line
+                  .step__text
+                    p Buy 1 or more products ✅
+                .step__one
+                  .step__number 
+                    p 2
+                  .step__lines
+                    .step__line
+                  .step__text
+                    p
+                      | Follow
+                      | &nbsp;
+                      a.step__text__link(href="https://www.instagram.com/athletesonthemat/" rel="noreferrer noopener" target="_blank")
+                        | athletesonthemat 
+                      | &nbsp;
+                      | on Instagram ✅
+                .step__one
+                  .step__number
+                    p 3
+                  .step__lines 
+                    .step__line
+                  .step__text
+                    p Like and Tag 2 friends on the "air conrad" post on instagram  ✅
+                .step__one
+                  .step__number   
+                    p 4
+                  .step__lines
+                    .step__line 
+                  .step__text
+                    p Winner will be drawn at random on 23 November 2023 on instagram ✅
+            if isPhone 
+              .home__ps5__rules__step__mobile
+                .home__ps5__rules__step__mobile__wrapper
+                  .home__ps5__rules__step__one
+                    p Buy 1 or more products ✅
+                  .home__ps5__rules__step__two
+                    p Follow &nbsp;
+                      a.step__text__link(href='https://www.instagram.com/athletesonthemat/', rel='noreferrer noopener', target='_blank') athletesonthemat
+                      | &nbsp; on instagram ✅
 
+                  .home__ps5__rules__step__three
+                    p Like and Tag 2 friends on the "air conrad" post on instagram  ✅
+                  .home__ps5__rules__step__four
+                    p Winner will be drawn at random on 23 November 2023 on instagram ✅
       section.home__genesis(data-client="GENESIS")
         img.pixel1(src="pixels.svg" data-speed="2")
         //- .home__genesis__spacer
