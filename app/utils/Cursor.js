@@ -55,9 +55,10 @@ export default class Cursor {
     
       link.addEventListener("mouseover", () => {
         gsap.to(cursor, {
-          scale: 2,
+          scale: 1.5,
           autoAlpha: 0,
-          duration: 0.5
+          duration: 0.5,
+          cursor: 'grab'
         })
       })
   

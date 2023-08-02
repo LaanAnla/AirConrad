@@ -107,7 +107,7 @@ section.home__collection {
 
   @include media('<phone') {
     left: 150px;
-    height: 250px;
+    height: 150px;
     top: 550px;
   }
 }
@@ -189,6 +189,31 @@ figure.home__collection__product {
 
   @include media('<phone') {
     font-size: 15px;
+  }
+}
+
+.home__collection__shop__wrapper {
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__collection__shop__button button {
+  border-radius: -13%;
+  background-color: #980d40;
+  width: 30vw;
+  height: 10vh;
+  color: #ffffff;
+  font-size: 25px;
+  font-family: "Pixeloid Sans";
+  text-transform: uppercase;
+
+  @include media('<phone') {
+    margin-top: 20px;
+    width: 60vw;
+    font-size: 20px;
   }
 }
 
