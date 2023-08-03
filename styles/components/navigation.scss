@@ -115,8 +115,8 @@ li.navigation__list__item {
 }
 
 .navigation__section__title {
-  color: green;
   @extend %p;
+  color: #ffffff;
   text-transform: uppercase;
   text-align: center;
 
