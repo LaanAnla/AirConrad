@@ -156,7 +156,7 @@ block content
                 .home__genesis__desktop__content__section.setfix
                   h1 Flashback
                   p In 1992, Flashback revolutionized action gaming and gained legendary status, ranking among the 100 best video games in history.<br><br>Today, Paul Cuisset, the creator of the original game, invites you to play again as Conrad B. Hart, the young agent of the GBI (Galactic Bureau of Investigation).
-              else if isPhone
+              else if isPhone 
                 .home__genesis__desktop__content__section
                     h1 Flashback
                     p In 1992, Flashback revolutionized action gaming and gained legendary status, ranking among the 100 best video games in history.<br><br>Today, Paul Cuisset, the creator of the original game, invites you to play again as Conrad B. Hart, the young agent of the GBI (Galactic Bureau of Investigation).
@@ -194,7 +194,7 @@ block content
                 figure
                   img.js-tilt(src="logo-athom-scale.jpg")
       section.home__end
-        if isDesktop
+        if !isDesktop
           h1.home__end__title__introduction(data-speed="clamp(1.2)") flashback 2
         else if isPhone
           h1.home__end__title__introduction(data-speed="clamp(1)") flashback 2

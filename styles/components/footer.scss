@@ -17,6 +17,11 @@
     height: 40vh;
     background-position: bottom;
   }
+
+  @media screen and (orientation: landscape) {
+    height: 130vh;
+    background-position: bottom;
+  }
 } 
 
 .footer__wrapper {
@@ -27,6 +32,11 @@
   width: 100vw;
 
   @include media('<phone') {
+    flex-direction: column;
+    background-color: black;
+  }
+
+  @media screen and (orientation: landscape) {
     flex-direction: column;
     background-color: black;
   }
@@ -49,6 +59,11 @@
     margin: 0;
     justify-content: center;
   }
+
+  @media screen and (orientation: landscape) {
+    margin: 0;
+    justify-content: center;
+  }
 }
 
 .footer__social__links {
@@ -66,6 +81,15 @@
     font-family: 'Pixeloid Sans';
     margin-top: 15px;
   }
+
+  @media screen and (orientation: landscape) {
+    display: block;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Pixeloid Sans';
+    margin-top: 15px;
+  }
+
 }
 
 .footer__social__link__image {
@@ -107,6 +131,10 @@
   @include media('<phone') {
     font-size: 12px;
   }
+
+  @media screen and (orientation: landscape) {
+    font-size: 12px;
+  }
 }
 
 .back__to__top {
@@ -120,6 +148,10 @@
   @include media('<phone') {
     display: none;
   }
+
+  @media screen and (orientation: landscape) {
+    display: none;
+  }
 }
 
 .back__to__top img {
@@ -129,6 +161,10 @@
 
 .mobile {
   @include media('<phone') {
+    display: none;
+  }
+
+  @media screen and (orientation: landscape) {
     display: none;
   }
 }

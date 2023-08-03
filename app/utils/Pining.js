@@ -23,7 +23,7 @@ export default class Pining {
     let mm = gsap.matchMedia();
 
     // add a media query. When it matches, the associated function will run
-    mm.add("(min-width: 769px)", () => {
+    mm.add("(min-width: 890px)", () => {
 
       ScrollTrigger.create({
             trigger: this.start,

@@ -39,8 +39,12 @@ h1.home__banner__title {
   text-transform: uppercase;
   text-align: center;
 
-  @include media('<phone') {
+  @include media('<phone')  {
     width: 90%;
+  }
+
+  @media screen and (orientation: landscape) {
+    font-size: 35px;
   }
 }
 
@@ -111,6 +115,10 @@ section.home__collection {
     // top: 550px;
     display: none;
   }
+
+  @media screen and (orientation: landscape) {
+    display: none;
+  }
 }
 
 .home__collection__title__introduction__wrapper,
@@ -155,6 +163,14 @@ h2.home__ps5__title__introduction {
     gap: 80px;
     margin-top: 30px;
   }
+
+  @media screen and (orientation: landscape) {
+    flex-direction: column;
+    
+    height: 100%;
+    gap: 80px;
+    margin-top: 30px;
+  }
 }
 
 figure.home__collection__product {
@@ -165,6 +181,12 @@ figure.home__collection__product {
     height: 80vw;
     width: 80vw;
   }
+
+  @media screen and (orientation: landscape) {
+    height: 50vw;
+    width: 50vw;
+  }
+  
 }
 
 .home__collection__product__photo img {
@@ -202,6 +224,10 @@ figure.home__collection__product {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (orientation: landscape) {
+    margin-top: 60px;
+  }
 }
 
 .home__collection__shop__button button {
@@ -218,6 +244,11 @@ figure.home__collection__product {
     margin-top: 70px;
     width: 60vw;
     font-size: 20px;
+  }
+
+  @media screen and (orientation: landscape) {
+    font-size: 15px;
+    width: 25vw;
   }
 }
 
@@ -248,6 +279,11 @@ p.credit {
   @include media('<phone') {
     width: 80vw;
   }
+
+  @media screen and (orientation: landscape) {
+    bottom: 40px;
+  }
+
 }
 
 ///////////////////////////
@@ -446,6 +482,10 @@ section.home__genesis {
     // text-align: center;
     display: none;
   }
+
+  @media screen and (orientation: landscape) {
+    display: none;
+  }
 }
 
 .setfix {
@@ -459,6 +499,11 @@ section.home__genesis {
   line-height: 1.2;
 
   @include media('<phone') {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  @media screen and (orientation: landscape) {
     font-size: 15px;
     text-align: center;
   }
@@ -504,6 +549,10 @@ section.home__genesis {
   @include media('<phone') {
     display: block;
   }
+
+  @media screen and (orientation: landscape) {
+    display: block;
+  }
 }
 
 .home__genesis__mobile__photo {
@@ -539,6 +588,12 @@ section.home__genesis {
     width: 100%;
     align-items: center;
   }
+
+  @media screen and (orientation: landscape) {
+    height: auto;
+    width: 100%;
+    align-items: center;
+  }
 }
 
 .home__genesis__desktop__photos {
@@ -550,6 +605,10 @@ section.home__genesis {
   //box-shadow:4px 4px 4px rgba(100, 100, 100, 0.4);
 
   @include media('<phone') {
+    display: none;
+  }
+
+  @media screen and (orientation: landscape) {
     display: none;
   }
 }
@@ -606,6 +665,12 @@ h1.home__end__title__introduction {
     margin-bottom: 0;
     margin-top: 30px;
   }
+
+  @media screen and (orientation: landscape) {
+    font-size: 25px;
+    margin-bottom: 0;
+    margin-top: 30px;
+  }
 }
 
 p.home__end__title__introduction {
@@ -617,5 +682,9 @@ p.home__end__title__introduction {
 
   @include media('<phone') {
     font-size: 15px;
+  }
+
+  @media screen and (orientation: landscape) {
+    font-size: 20px;
   }
 }

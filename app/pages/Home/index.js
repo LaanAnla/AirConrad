@@ -92,6 +92,8 @@ export default class Home extends Page {
   }
 
 
+
+
   createBackToTop() {
     this.back = new Back()
   }
