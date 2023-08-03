@@ -74,7 +74,7 @@
     font-size: 15px;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     font-size: 20px;
   }
 
@@ -129,7 +129,7 @@ li.navigation__list__item {
     display: none;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     display: none;
   }
 }

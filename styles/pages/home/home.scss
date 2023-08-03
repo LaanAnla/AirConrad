@@ -43,7 +43,7 @@ h1.home__banner__title {
     width: 90%;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     font-size: 35px;
   }
 }
@@ -116,7 +116,7 @@ section.home__collection {
     display: none;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     display: none;
   }
 }
@@ -164,7 +164,7 @@ h2.home__ps5__title__introduction {
     margin-top: 30px;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     flex-direction: column;
     
     height: 100%;
@@ -182,7 +182,7 @@ figure.home__collection__product {
     width: 80vw;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     height: 50vw;
     width: 50vw;
   }
@@ -225,7 +225,7 @@ figure.home__collection__product {
   justify-content: center;
   align-items: center;
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     margin-top: 60px;
   }
 }
@@ -246,7 +246,7 @@ figure.home__collection__product {
     font-size: 20px;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     font-size: 15px;
     width: 25vw;
   }
@@ -280,7 +280,7 @@ p.credit {
     width: 80vw;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     bottom: 40px;
   }
 
@@ -483,7 +483,7 @@ section.home__genesis {
     display: none;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     display: none;
   }
 }
@@ -503,7 +503,7 @@ section.home__genesis {
     text-align: center;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     font-size: 15px;
     text-align: center;
   }
@@ -550,7 +550,7 @@ section.home__genesis {
     display: block;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     display: block;
   }
 }
@@ -589,7 +589,7 @@ section.home__genesis {
     align-items: center;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     height: auto;
     width: 100%;
     align-items: center;
@@ -608,7 +608,7 @@ section.home__genesis {
     display: none;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     display: none;
   }
 }
@@ -666,7 +666,7 @@ h1.home__end__title__introduction {
     margin-top: 30px;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     font-size: 25px;
     margin-bottom: 0;
     margin-top: 30px;
@@ -684,7 +684,7 @@ p.home__end__title__introduction {
     font-size: 15px;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     font-size: 20px;
   }
 }

@@ -18,7 +18,7 @@
     background-position: bottom;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     height: 130vh;
     background-position: bottom;
   }
@@ -36,7 +36,7 @@
     background-color: black;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     flex-direction: column;
     background-color: black;
   }
@@ -60,7 +60,7 @@
     justify-content: center;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     margin: 0;
     justify-content: center;
   }
@@ -82,7 +82,7 @@
     margin-top: 15px;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     display: block;
     color: #ffffff;
     font-size: 20px;
@@ -132,7 +132,7 @@
     font-size: 12px;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     font-size: 12px;
   }
 }
@@ -149,7 +149,7 @@
     display: none;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     display: none;
   }
 }
@@ -164,7 +164,7 @@
     display: none;
   }
 
-  @media screen and (orientation: landscape) {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
     display: none;
   }
 }
