@@ -106,9 +106,10 @@ section.home__collection {
   z-index: z('preloader');
 
   @include media('<phone') {
-    left: 150px;
-    height: 150px;
-    top: 550px;
+    // left: 150px;
+    // height: 150px;
+    // top: 550px;
+    display: none;
   }
 }
 
