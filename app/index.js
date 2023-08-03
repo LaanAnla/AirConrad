@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { gsap } from "gsap"
 import Stats from 'stats.js'
+import ScreenOrientation from './utils/ScreenOrientation';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -20,7 +21,7 @@ class App {
       normalizeScroll: true,
       // speed: 1.5
     })
-
+    this.orientation = new ScreenOrientation()
     this.canvas = document.querySelector('canvas#webgl')
     this.createPrelaoder()
     this.onResize()
