@@ -32,14 +32,6 @@ export default class Split {
             stagger: 0,
             duration: 0.6
           })
-          // .to('.home__banner__title', {
-          //   duration: 0.8,
-          //   autoAlpha: 0,
-          // }, 1)
-          // .to('.home__banner__title__ps5', {
-          //   autoAlpha: 1,
-          //   duration: 0.2
-          // })
         }
       }, ">-80%")
     })
@@ -49,32 +41,6 @@ export default class Split {
     })
     tl.to('.cursor', {
       autoAlpha: 1
-    },0)
-
-    // ScrollTrigger.create({
-    //   trigger: '.home__banner__title',
-    //   start: "center center",
-    //   onEnterBack: ()=>{
-    //     gsap.to('.home__banner__title__ps5', {
-    //       autoAlpha: 1,
-    //       duration: 1,
-    //       //color: 'green'
-    //     })
-    //   }
-    // })
-
-    // splitElement.addEventListener('mouseover', ()=>{
-    //   gsap.to(splitElement, {
-    //     autoAlpha: 0
-    //   })
-    // })
-
-    // splitElement.addEventListener('mouseout', ()=>{
-    //   gsap.to(splitElement, {
-    //     autoAlpha: 1
-    //   })
-    // })
-
-    
+    },0)    
   }
 }

@@ -7,6 +7,7 @@ import Cursor from "../../utils/Cursor";
 import { gsap } from "gsap"
 import Scroll from "../../utils/Scroll";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitTitle from "../../utils/SplitTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,6 +48,8 @@ export default class Home extends Page {
       this.text = document.querySelector('.home__banner__title'),
       this.item =  null
     )
+
+    this.splitTitle = new SplitTitle()
 
     this.pining = new Pining(
       this.start = document.querySelector('.home__genesis'),

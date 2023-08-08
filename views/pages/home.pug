@@ -23,6 +23,8 @@ block content
         img.pixel1(src="pixels.svg" data-speed="1.6" alt="logo des pixels en parallax")
         .home__collection__title__introduction__wrapper
           h2.home__collection__title__introduction(data-speed="clamp(1.1)") Discover the collection
+          h2.home__collection__title__introduction(data-speed="clamp(1.1)") Limited edition
+          h2.home__collection__title__introduction.preorder(data-speed="clamp(1.1)") Pre-order until September 30th 
         if isDesktop
           .home__collection__product__wrapper
             figure.home__collection__product(data-speed="clamp(0.9)")
@@ -87,7 +89,7 @@ block content
         img.pixel1(src="pixels.svg" data-speed="1.6")
         .home__ps5__title__introduction__wrapper
           h2.home__ps5__title__introduction(data-speed="1") enter the draw
-          h2.home__ps5__title__introduction(data-speed="1.3") win a PS5
+          h2.home__ps5__title__introduction(data-speed="1.2") win a PS5
         canvas#webglPS5
         p.credit "PS5 Box - Accurate scale" (https://skfb.ly/orKZ7) by trainhard is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
@@ -111,12 +113,23 @@ block content
                   .step__lines
                     .step__line
                   .step__text
+                    //- p
+                    //-   | Follow
+                    //-   | &nbsp;
+                    //-   a.step__text__link(href="https://www.instagram.com/athletesonthemat/" rel="noreferrer noopener" target="_blank")
+                    //-     | athletesonthemat 
+                    //-   | &nbsp;
+                    //-   | on Instagram ✅
                     p
                       | Follow
                       | &nbsp;
-                      a.step__text__link(href="https://www.instagram.com/athletesonthemat/" rel="noreferrer noopener" target="_blank")
+                      a.step__text__link(href="https://www.instagram.com/athletesonthemat/", rel="noreferrer noopener", target="_blank")
                         | athletesonthemat 
                       | &nbsp;
+                      | et
+                      | &nbsp;
+                      a.step__text__link(href="https://www.instagram.com/microids_official/", rel="noreferrer noopener", target="_blank")
+                        | Microids 
                       | on Instagram ✅
                 .step__one
                   .step__number
@@ -138,10 +151,20 @@ block content
                   .home__ps5__rules__step__one
                     p Buy 1 or more products ✅
                   .home__ps5__rules__step__two
-                    p Follow &nbsp;
-                      a.step__text__link(href='https://www.instagram.com/athletesonthemat/', rel='noreferrer noopener', target='_blank') athletesonthemat
-                      | &nbsp; on instagram ✅
-
+                    //- p Follow &nbsp;
+                    //-   a.step__text__link(href='https://www.instagram.com/athletesonthemat/', rel='noreferrer noopener', target='_blank') athletesonthemat
+                    //-   | &nbsp; on instagram ✅
+                    p
+                      | Follow
+                      | &nbsp;
+                      a.step__text__link(href="https://www.instagram.com/athletesonthemat/", rel="noreferrer noopener", target="_blank")
+                        | athletesonthemat 
+                      | &nbsp;
+                      | et
+                      | &nbsp;
+                      a.step__text__link(href="https://www.instagram.com/microids/", rel="noreferrer noopener", target="_blank")
+                        | Microids 
+                      | on Instagram ✅
                   .home__ps5__rules__step__three
                     p Like and Tag 2 friends on the "air conrad" post on instagram  ✅
                   .home__ps5__rules__step__four
@@ -194,7 +217,7 @@ block content
                 figure
                   img.js-tilt(src="logo-athom-scale.jpg")
       section.home__end
-        if !isDesktop
+        if isDesktop
           h1.home__end__title__introduction(data-speed="clamp(1.2)") flashback 2
         else if isPhone
           h1.home__end__title__introduction(data-speed="clamp(1)") flashback 2
