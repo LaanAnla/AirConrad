@@ -708,3 +708,22 @@ p.home__end__title__introduction {
     font-size: 20px;
   }
 }
+
+.home__end__title__video {
+  width: 90vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 50px auto;
+}
+
+.home__end__title__video iframe {
+  width: 1120px;
+  height: 630px;
+
+  @include media('<phone') {
+    width: 100%;
+    height: auto;
+  }
+}

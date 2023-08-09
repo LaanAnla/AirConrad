@@ -89,7 +89,7 @@ block content
         img.pixel1(src="pixels.svg" data-speed="1.6")
         .home__ps5__title__introduction__wrapper
           h2.home__ps5__title__introduction(data-speed="1") enter the draw
-          h2.home__ps5__title__introduction(data-speed="1.2") win a PS5
+          h2.home__ps5__title__introduction(data-speed="1.1") win a PS5
         canvas#webglPS5
         p.credit "PS5 Box - Accurate scale" (https://skfb.ly/orKZ7) by trainhard is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
@@ -216,7 +216,7 @@ block content
               .home__genesis__desktop__photo.blue
                 figure
                   img.js-tilt(src="logo-athom-scale.jpg")
-      section.home__end
+      section.home__end(data-client="GENESIS")
         //- if isDesktop
           //- h1.home__end__title__introduction(data-speed="clamp(1.2)") flashback 2
           figure.home__end__title__image(data-speed="clamp(1.2)")
@@ -227,6 +227,15 @@ block content
           img(src="logo-flashback-2.webp")
         .home__end__title__introduction__wrapper.movement
           p.home__end__title__introduction(data-speed="clamp(1.1)") In the 22nd century, the peace of the United Worlds extends throughout the Solar System — but this tranquility is threatened by the Morph invasion led by the fearsome General Lazarus.<br><br>In search of his lifelong friend, Ian, and with the help of his few allies — including A.I.S.H.A., his iconic AI-powered weapon — Conrad, once again, dives into a heart-pounding adventure full of twists, turns and revelations!<br><br>A gripping, fluid and intricate platform shooter, including exploration, puzzle solving and, of course, adventure!
-      
+        .home__end__title__video  
+          iframe(
+            width="1120",
+            height="630",
+            src="https://www.youtube.com/embed/AObsWrc5RqI",
+            title="YouTube video player",
+            frameborder="0",
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+            allowfullscreen
+          )
       include ../partials/footer.pug
     
