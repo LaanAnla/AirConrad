@@ -462,7 +462,7 @@ section.home__ps5__rules {
 .home__ps5__rules__step__four {
   @extend %p;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -504,7 +504,7 @@ section.home__genesis {
   line-height: 1.2;
 
   @include media('<phone') {
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
   }
 
@@ -672,12 +672,25 @@ h1.home__end__title__introduction {
     margin-bottom: 0;
     margin-top: 30px;
   }
-
+  
   @media screen and (max-width: 900px) and (orientation: landscape) {
     font-size: 25px;
     margin-bottom: 0;
     margin-top: 30px;
   }
+}
+
+figure.home__end__title__image {
+  width: 80vw;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.home__end__title__image img {
+  width: 100%;
+  height: 100%;
 }
 
 p.home__end__title__introduction {
@@ -688,7 +701,7 @@ p.home__end__title__introduction {
   text-align: center;
 
   @include media('<phone') {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   @media screen and (max-width: 900px) and (orientation: landscape) {

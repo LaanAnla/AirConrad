@@ -149,7 +149,7 @@ block content
               .home__ps5__rules__step__mobile
                 .home__ps5__rules__step__mobile__wrapper
                   .home__ps5__rules__step__one
-                    p Buy 1 or more products ✅
+                    p Buy 1 or more products
                   .home__ps5__rules__step__two
                     //- p Follow &nbsp;
                     //-   a.step__text__link(href='https://www.instagram.com/athletesonthemat/', rel='noreferrer noopener', target='_blank') athletesonthemat
@@ -164,11 +164,11 @@ block content
                       | &nbsp;
                       a.step__text__link(href="https://www.instagram.com/microids/", rel="noreferrer noopener", target="_blank")
                         | Microids 
-                      | on Instagram ✅
+                      | on Instagram
                   .home__ps5__rules__step__three
-                    p Like and Tag 2 friends on the "air conrad" post on instagram  ✅
+                    p Like and Tag 2 friends on the "air conrad" post on instagram
                   .home__ps5__rules__step__four
-                    p Winner will be drawn at random on 23 November 2023 on instagram ✅
+                    p Winner will be drawn at random on 23 November 2023 on instagram
       section.home__genesis(data-client="GENESIS")
         img.pixel1(src="pixels.svg" data-speed="2")
         //- .home__genesis__spacer
@@ -217,10 +217,14 @@ block content
                 figure
                   img.js-tilt(src="logo-athom-scale.jpg")
       section.home__end
-        if isDesktop
-          h1.home__end__title__introduction(data-speed="clamp(1.2)") flashback 2
-        else if isPhone
-          h1.home__end__title__introduction(data-speed="clamp(1)") flashback 2
+        //- if isDesktop
+          //- h1.home__end__title__introduction(data-speed="clamp(1.2)") flashback 2
+          figure.home__end__title__image(data-speed="clamp(1.2)")
+            img(src="logo-flashback-2.webp")
+        //- else if isPhone
+        //-   h1.home__end__title__introduction(data-speed="clamp(1)") flashback 2
+        figure.home__end__title__image
+          img(src="logo-flashback-2.webp")
         .home__end__title__introduction__wrapper.movement
           p.home__end__title__introduction(data-speed="clamp(1.1)") In the 22nd century, the peace of the United Worlds extends throughout the Solar System — but this tranquility is threatened by the Morph invasion led by the fearsome General Lazarus.<br><br>In search of his lifelong friend, Ian, and with the help of his few allies — including A.I.S.H.A., his iconic AI-powered weapon — Conrad, once again, dives into a heart-pounding adventure full of twists, turns and revelations!<br><br>A gripping, fluid and intricate platform shooter, including exploration, puzzle solving and, of course, adventure!
       
