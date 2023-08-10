@@ -32,7 +32,7 @@ h1.home__banner__title {
   left: 50%;
   transform: translate(-50%,-50%);
   //font-size: clamp(3.2rem, 70vw, 16rem);
-  font-size: calc(35px + (140 - 35) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(35px + (115 - 35) * ((100vw - 320px) / (1920 - 320)));
   width: 80%;
   font-family: 'Pixeloid Bold';
   color: #ffffff;
@@ -49,7 +49,7 @@ h1.home__banner__title {
 }
 
 .green-text {
-  color: rgb(13, 11, 178);
+  color: rgb(44, 117, 255);
 }
 
 // .green-text:hover {
